@@ -36,5 +36,5 @@
   ],
   "theme_color": "#0099FF",
   "background_color": "#ffffff",
-  "display": "website"
+  "display": "browser"
 }

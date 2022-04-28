@@ -1,0 +1,109 @@
+html,
+body {
+  font-family: "Noto Sans JP", "Hiragino Sans", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  color: #494949;
+  /* FIXME: delete after finish */
+  min-height: 2500px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#container-banner {
+  position: fixed;
+  width: calc(100vw - clamp(10px, 1vw, 20px) * 2);
+  padding: clamp(10px, 0.5vh, 15px) clamp(10px, 1vw, 20px);
+  top: 0;
+  background-size: cover !important;
+  background: url("/src/assets/banner.svg") no-repeat bottom;
+  min-height: clamp(10vh, 6vh ,110px);
+  z-index: 9999;
+}
+
+@supports not (padding: clamp(10px, 0.5vh, 15px) clamp(10px, 1vw, 20px)) {
+  #container-banner {
+    min-height: 6vh;
+  }
+}
+
+#banner-contents {
+  display: grid;
+  grid-template-areas: "title-text placeholder-menu";
+  grid-template-columns: max-content auto;
+  align-items: center;
+  justify-items: stretch;
+}
+
+#lab-title {
+  grid-area: title-text;
+  color: #fff;
+  font-size: clamp(2.5vh, 2vh, 3rem);
+  font-weight: bold;
+}
+
+#button-menu {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  grid-area: placeholder-menu;
+  justify-self: end;
+  transition: all 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+@media screen and (max-width: 425px) {
+  #container-banner {
+    min-height: 5vh;
+    max-height: 120px;
+    padding: 10px;
+  }
+
+  #lab-title {
+    font-size: 16px;
+  }
+
+  #button-menu {
+    visibility: visible;
+    opacity: 1;
+    width: 5vw;
+    min-width: 24px;
+    height: 5vw;
+    min-height: 24px;
+  }
+}
+
+#container-banner-carousel {
+  position: relative;
+  top: 0;
+  display: grid;
+  grid-template-areas: "banner-carousel";
+  background-color: #656565;
+  align-items: center;
+  max-height: 45vh;
+  overflow: hidden;
+}
+
+#welcome {
+  grid-area: banner-carousel;
+  z-index: 2;
+  font-size: clamp(5vh, 8vh, 3rem);
+  color: #fff;
+  margin-left: 3vw;
+  font-weight: bold;
+  width: fit-content;
+}
+
+#vue-carousel {
+  grid-area: banner-carousel;
+}
+
+@media screen and (max-width: 425px) {
+  #container-banner-carousel {
+    max-height: 35vh;
+  }
+}
+
+.card {
+
+}

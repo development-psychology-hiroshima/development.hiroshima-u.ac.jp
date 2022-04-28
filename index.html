@@ -1,13 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" href="/public/favicons/favicon.ico"/>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap&subset=japanese"
+        rel="stylesheet">
+  <link rel="manifest" href="/public/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <meta http-equiv="Content-Type" content="text/css"/>
+  <meta http-equiv="Content-Type" content="text/javascript"/>
+  <link rel="stylesheet" href="/public/stylesheets/index.css"/>
+  <meta
+    name="description"
+    content="人間のこころの発達について、人が人として生きるうえでとても大切な社会性や社会的適応に焦点をあてて探究しています"
+  />
+  <meta
+    name="keywords"
+    content="心理学, 広島大学, 学部, 大学院, 発達心理学, 研究室, こころの発達, 児童と青年, 発達, アタッチメント, アイデンティティ, dynamic systems"
+  />
+  <title>広島大学発達心理学研究室</title>
+</head>
+<body>
+<noscript>
+  <p
+    style="width: 100vw;height: 7vh;line-height: 7vh;font-size: large;text-align: center;color: #730202;background-color: hsl(0deg 27% 93%);">
+    当サイトではJavaScriptを使用しているコンテンツがありますので、ブラウザ設定でJavaScriptを有効にしてご利用ください。</p>
+</noscript>
+<div id="container-banner">
+  <div id="banner-contents">
+    <div id="lab-title">広島大学 発達心理学研究室</div>
+    <img id="button-menu" alt="menu" src="/src/assets/menu.png"/>
+  </div>
+</div>
+<div id="container-banner-carousel">
+  <div id="welcome">
+    <p class="welcome">ようこそ、</p>
+    <p class="welcome">発達研へ。</p>
+  </div>
+  <div id="vue-carousel"></div>
+</div>
+
+<div class="card">
+
+</div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
 </html>

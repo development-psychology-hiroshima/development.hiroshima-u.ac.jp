@@ -1,4 +1,4 @@
 import { createApp } from 'vue'
-import App from './App.vue'
+import bannerCarousel from './components/bannerCarousel.vue'
 
-createApp(App).mount('#app')
+createApp(bannerCarousel).mount('#vue-carousel')
