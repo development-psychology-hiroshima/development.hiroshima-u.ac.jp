@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import {onBeforeMount, ref} from "vue";
+import {ref} from "vue";
 
 export default {
   name: "mobileMenu",
@@ -31,7 +31,7 @@ export default {
     const menuItems = ref([])
     const yaml = window.jsyaml;
 
-    onBeforeMount(async () => {
+    const getConfig = async () => {
       const response = await fetch('config.yml')
           .then(response => response.text())
           .catch(error => undefined);
@@ -77,7 +77,9 @@ export default {
           }
         ]
       }
-    });
+    }
+
+    getConfig();
     return {
       menuItems
     }

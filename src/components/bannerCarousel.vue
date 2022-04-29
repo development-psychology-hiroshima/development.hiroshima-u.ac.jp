@@ -10,13 +10,13 @@
 </template>
 
 <script setup>
-import {onBeforeMount, ref} from "vue";
+import {ref} from "vue";
 const yaml = window.jsyaml;
 
 const images = ref([]);
 const showreel = ref([]);
 
-onBeforeMount(async () => {
+const getConfig = async () => {
   const response = await fetch('config.yml')
       .then(response => response.text())
       .catch(error => undefined);
@@ -33,7 +33,9 @@ onBeforeMount(async () => {
       "https://development.hiroshima-u.ac.jp/images/sche/201804shinkan.jpg",
     ];
   }
-});
+}
+
+getConfig();
 
 const getRealPath = (path) => {
   let returnPath = "https://development.hiroshima-u.ac.jp/" + path;
