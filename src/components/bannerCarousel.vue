@@ -10,19 +10,30 @@
 </template>
 
 <script setup>
-import {ref} from 'vue';
-// TODO: Use js-yaml to parse from overall config file?
-// 下記の形で、新たな画像のURLを追加してください： / Please add new images URL in the following form:
-// [
-// "画像1のURL",
-// "画像2のURL",
-// ]
-const images = [
-  "images/syugo/sugimuraken_syugo202203.jpeg",
-  "images/syugo/umemuraken_syugo202203.jpeg",
-  "images/2019_aki_sinkan.jpeg",
-  "https://development.hiroshima-u.ac.jp/images/sche/201804shinkan.jpg",
-];
+import {onBeforeMount, ref} from "vue";
+const yaml = window.jsyaml;
+
+const images = ref([]);
+const showreel = ref([]);
+
+onBeforeMount(async () => {
+  const response = await fetch('config.yml')
+      .then(response => response.text())
+      .catch(error => undefined);
+  try {
+    images.value = yaml.load(response).bannerImages;
+    for (let i = 0; i < images.value.length; i++) {
+      showreel.value.push({id: i, src: images.value[i]});
+    }
+  } catch (e) {
+    images.value = [
+      "images/syugo/sugimuraken_syugo202203.jpeg",
+      "images/syugo/umemuraken_syugo202203.jpeg",
+      "images/2019_aki_sinkan.jpeg",
+      "https://development.hiroshima-u.ac.jp/images/sche/201804shinkan.jpg",
+    ];
+  }
+});
 
 const getRealPath = (path) => {
   let returnPath = "https://development.hiroshima-u.ac.jp/" + path;
@@ -36,14 +47,6 @@ const getRealPath = (path) => {
   return returnPath;
 }
 
-let showreel = [];
-for (let i = 0; i < images.length; i++) {
-  showreel.push({
-    id: i,
-    src: images[i],
-  })
-}
-
 const index = ref(0);
 let timer = null;
 
@@ -54,7 +57,7 @@ const autoPlay = () => {
     if (index.value >= showreel.length) {
       index.value = 0
     }
-  }, 10000)
+  }, 8000)
 }
 
 const stop = () => {
@@ -110,6 +113,7 @@ autoPlay();
 .fade-leave-active {
   transition: opacity 1.5s ease-in-out;
 }
+
 /*noinspection CssUnusedSymbol*/
 .fade-enter-from,
 .fade-leave-to {

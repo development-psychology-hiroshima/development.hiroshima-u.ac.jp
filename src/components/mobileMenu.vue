@@ -8,13 +8,9 @@
     <div id="focus-controller" v-if="show" @click="show = false">
       <div class="container-menu-content">
         <ul class="menu-content">
-          <!-- TODO: auto-generate content from config? -->
-          <li class="menu-item"><a href="https://development.hiroshima-u.ac.jp/index.html">Home</a></li>
-          <li class="menu-item"><a href="https://development.hiroshima-u.ac.jp/memb.html">メンバー紹介</a></li>
-          <li class="menu-item"><a href="https://development.hiroshima-u.ac.jp/rese_sugimura.html">杉村和美の研究活動</a></li>
-          <li class="menu-item"><a href="https://development.hiroshima-u.ac.jp/rese_umemura.html">梅村比丘の研究活動</a></li>
-          <li class="menu-item"><a href="https://development.hiroshima-u.ac.jp/rese_gakusei.html">学生の研究活動</a></li>
-          <li class="menu-item"><a href="https://development.hiroshima-u.ac.jp/sche.html">年間スケジュール</a></li>
+          <li class="menu-item" v-for="menuItem in menuItems">
+            <a :href="menuItem.url" v-show="!(false === menuItem.show)">{{ menuItem.name }}</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -22,11 +18,62 @@
 </template>
 
 <script>
+import {onBeforeMount, ref} from "vue";
+
 export default {
   name: "mobileMenu",
   data() {
     return {
       show: false,
+    }
+  },
+  setup() {
+    const menuItems = ref([])
+    const yaml = window.jsyaml;
+
+    onBeforeMount(async () => {
+      const response = await fetch('config.yml')
+          .then(response => response.text())
+          .catch(error => undefined);
+      try {
+        menuItems.value = yaml.load(response).menuItems;
+      } catch (e) {
+        menuItems.value = [
+          {
+            "name": "Home",
+            "url": "index.html",
+            "show": true,
+          },
+          {
+            "name": "メンバー紹介",
+            "url": "members.html",
+            "show": true,
+          },
+          {
+            "name": "杉村和美の研究活動",
+            "url": "research_activity_sugimura.html",
+            "show": true,
+          },
+          {
+            "name": "梅村比丘の研究活動",
+            "url": "research_activity_umemura.html",
+            "show": true,
+          },
+          {
+            "name": "学生の研究活動",
+            "url": "research_activity_students.html",
+            "show": true,
+          },
+          {
+            "name": "年間スケジュール",
+            "url": "annual_schedule.html",
+            "show": true,
+          }
+        ]
+      }
+    });
+    return {
+      menuItems
     }
   }
 }
@@ -49,6 +96,12 @@ export default {
   padding-bottom: 1vh;
   background: #ffffffd9;
   backdrop-filter: blur(10px);
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+  .container-menu-content {
+    background: #fffffff2;
+  }
 }
 
 ul, li {
