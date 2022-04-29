@@ -54,7 +54,7 @@ const autoPlay = () => {
   clearInterval(timer)
   timer = setInterval(() => {
     index.value++;
-    if (index.value >= showreel.length) {
+    if (index.value >= showreel.value.length) {
       index.value = 0
     }
   }, 8000)

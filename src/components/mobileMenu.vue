@@ -9,7 +9,7 @@
       <div class="container-menu-content">
         <ul class="menu-content">
           <li class="menu-item" v-for="menuItem in menuItems">
-            <a :href="menuItem.url" v-show="!(false === menuItem.show)">{{ menuItem.name }}</a>
+            <a :href="menuItem.url" v-if="!(false === menuItem.show)">{{ menuItem.name }}</a>
           </li>
         </ul>
       </div>
@@ -41,31 +41,37 @@ export default {
         menuItems.value = [
           {
             "name": "Home",
+            "english": "Home",
             "url": "index.html",
             "show": true,
           },
           {
             "name": "メンバー紹介",
+            "english": "Members",
             "url": "members.html",
             "show": true,
           },
           {
             "name": "杉村和美の研究活動",
+            "english": "Sugimura's activities",
             "url": "research_activity_sugimura.html",
             "show": true,
           },
           {
             "name": "梅村比丘の研究活動",
+            "english": "Umemura's activities",
             "url": "research_activity_umemura.html",
             "show": true,
           },
           {
             "name": "学生の研究活動",
+            "english": "Students' activities",
             "url": "research_activity_students.html",
             "show": true,
           },
           {
             "name": "年間スケジュール",
+            "english": "Annual schedule",
             "url": "annual_schedule.html",
             "show": true,
           }

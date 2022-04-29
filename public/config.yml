@@ -1,38 +1,47 @@
-# Menu items to show in the navigation menu.
-# please DO USE ENGLISH HALF-WIDTH spaces!
-menuItems:
-  -
-    name: Home
-    url: index.html
-    show: true
-  -
-    name: メンバー紹介
-    url: members.html
-    show: true
-  -
-    name: 杉村和美の研究活動
-    url: research_activity_sugimura.html
-    show: true
-  -
-    name: 梅村比丘の研究活動
-    url: research_activity_umemura.html
-    show: true
-  -
-    name: 一例
-    url: path_to_webpage.html
-    show: false
-  -
-    name: 学生の研究活動
-    url: research_activity_students.html
-    show: true
-  -
-    name: 年間スケジュール
-    url: annual_schedule.html
-    show: true
 
-# Homepage Image banners
+# Homepage Image banner
+# Can add as many images as required
 bannerImages:
   - images/syugo/sugimuraken_syugo202203.jpeg
   - images/syugo/umemuraken_syugo202203.jpeg
   - images/2019_aki_sinkan.jpeg
   - https://development.hiroshima-u.ac.jp/images/sche/201804shinkan.jpg
+
+# Menu items to show in the navigation menu.
+# please DO USE ENGLISH HALF-WIDTH spaces!
+menuItems:
+  -
+    name: Home
+    english: Home
+    url: index.html
+    show: true
+  -
+    name: メンバー紹介
+    english: Members
+    url: members.html
+    show: true
+  -
+    name: 杉村和美の研究活動
+    english: Sugimura's activities
+    url: research_activity_sugimura.html
+    show: true
+  -
+    name: 梅村比丘の研究活動
+    english: Umemura's activities
+    url: research_activity_umemura.html
+    show: true
+  -
+    name: 一例
+    english: An example
+    url: path_to_webpage.html
+    show: false
+  -
+    name: 学生の研究活動
+    english: Students' activities
+    url: research_activity_students.html
+    show: true
+  -
+    name: 年間スケジュール
+    english: Annual schedule
+    url: annual_schedule.html
+    show: true
