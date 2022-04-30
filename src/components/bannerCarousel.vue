@@ -9,69 +9,90 @@
   </div>
 </template>
 
-<script setup>
-import {ref} from "vue";
+<script>
+import {onUnmounted, ref} from "vue";
+
 const yaml = window.jsyaml;
 
-const images = ref([]);
-const showreel = ref([]);
+export default {
+  name: "bannerCarousel",
+  methods: {
+    getRealPath: (path) => {
+      let returnPath = "https://development.hiroshima-u.ac.jp/" + path;
+      if (!path.startsWith("/")) {
+        const regex = new RegExp("^https?:\/\/development.hiroshima-u.ac.jp\/")
+        if (regex.test(path)) {
+          returnPath = path;
+        }
+      }
 
-const getConfig = async () => {
-  const response = await fetch('config.yml')
-      .then(response => response.text())
-      .catch(error => undefined);
-  try {
-    images.value = yaml.load(response).bannerImages;
-    for (let i = 0; i < images.value.length; i++) {
-      showreel.value.push({id: i, src: images.value[i]});
+      return returnPath;
     }
-  } catch (e) {
-    images.value = [
-      "images/syugo/sugimuraken_syugo202203.jpeg",
-      "images/syugo/umemuraken_syugo202203.jpeg",
-      "images/2019_aki_sinkan.jpeg",
-      "https://development.hiroshima-u.ac.jp/images/sche/201804shinkan.jpg",
-    ];
+  },
+  setup() {
+    const images = ref([]);
+    const showreel = ref([]);
+
+    const getConfig = async () => {
+      const response = await fetch('config.yml')
+          .then(response => response.text())
+          .catch(e => undefined);
+      try {
+        images.value = yaml.load(response).bannerImages;
+        for (let i = 0; i < images.value.length; i++) {
+          showreel.value.push({id: i, src: images.value[i]});
+        }
+      } catch (e) {
+        images.value = [
+          "images/syugo/sugimuraken_syugo202203.jpeg",
+          "images/syugo/umemuraken_syugo202203.jpeg",
+          "images/2019_aki_sinkan.jpeg",
+          "https://development.hiroshima-u.ac.jp/images/sche/201804shinkan.jpg",
+        ];
+        for (let i = 0; i < images.value.length; i++) {
+          showreel.value.push({id: i, src: images.value[i]});
+        }
+      }
+    }
+
+    getConfig();
+
+    const index = ref(0);
+    let timer = null;
+
+    const autoPlay = () => {
+      clearInterval(timer)
+      timer = setInterval(() => {
+        index.value++;
+        if (index.value >= showreel.value.length) {
+          index.value = 0
+        }
+      }, 8000)
+    }
+
+    const stop = () => {
+      if (timer) clearInterval(timer);
+      console.log("Banner image switching stopped.");
+    }
+    const start = () => {
+      autoPlay()
+      console.log("Banner image switching started.");
+    }
+
+    autoPlay();
+
+    onUnmounted(() => {
+      clearInterval(timer)
+    })
+
+    return {
+      index,
+      showreel,
+      stop,
+      start
+    }
   }
 }
-
-getConfig();
-
-const getRealPath = (path) => {
-  let returnPath = "https://development.hiroshima-u.ac.jp/" + path;
-  if (!path.startsWith("/")) {
-    const regex = new RegExp("^https?:\/\/development.hiroshima-u.ac.jp\/")
-    if (regex.test(path)) {
-      returnPath = path;
-    }
-  }
-
-  return returnPath;
-}
-
-const index = ref(0);
-let timer = null;
-
-const autoPlay = () => {
-  clearInterval(timer)
-  timer = setInterval(() => {
-    index.value++;
-    if (index.value >= showreel.value.length) {
-      index.value = 0
-    }
-  }, 8000)
-}
-
-const stop = () => {
-  if (timer) clearInterval(timer);
-  console.log("Banner image switching stopped.");
-}
-const start = () => {
-  autoPlay()
-  console.log("Banner image switching started.");
-}
-
-autoPlay();
 </script>
 
 <style>
