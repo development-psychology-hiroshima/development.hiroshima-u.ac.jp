@@ -1,10 +1,12 @@
+# 「研究室の話題」の部分
+# please DO USE ENGLISH HALF-WIDTH spaces!
 awards:
   -
     year: 2022
     text: 杉村和美が共同執筆した『アイデンティティ 時間と関係を生きる』が出版されました。
     url: null
   -
-    year: 2021
+    year: 2022
     text: 岩佐康弘・日原尚吾・杉村和美の研究発表が，中国四国心理学会第77回大会の大会優秀発表賞を受賞しました(2022.2)。
     url: https://cspa.hiroshima-u.ac.jp/award.html
   -
@@ -86,7 +88,7 @@ awards:
     url: https://link.springer.com/article/10.1007/s10964-019-01182-0
   -
     year: 2019
-    text: 杉村和美の論文がChild Development Perspecives に採択されました。
+    text: 杉村和美の論文がChild Development Perspectives に採択されました。
     url: https://srcd.onlinelibrary.wiley.com/doi/full/10.1111/cdep.12359
   -
     year: 2019
@@ -107,8 +109,10 @@ awards:
     year: 2019
     text: 日原尚吾・石橋彩波・梅村比丘・杉村和美の論文がEmerging Adulthoodに掲載されました。
     url: https://journals.sagepub.com/doi/full/10.1177/2167696819858457
-# Homepage Image banner
-# Can add as many images as required
+
+# Homepage Image banner.
+# Can add as many images as required.
+# please DO USE ENGLISH HALF-WIDTH spaces!
 bannerImages:
   - images/syugo/sugimuraken_syugo202203.jpeg
   - images/syugo/umemuraken_syugo202203.jpeg

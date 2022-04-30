@@ -22,7 +22,7 @@
   />
   <title>広島大学発達心理学研究室</title>
   <script defer src="/src/dependencies/js-yaml.min.js"></script>
-  <link rel="preload" href="/src/assets/logo.png" as="image" />
+  <link rel="preload" href="/src/assets/logo.png" as="image"/>
 </head>
 <body>
 <noscript>
@@ -47,52 +47,73 @@
 
 <div id="container-desktop-menu"></div>
 
-<div class="container-index-contents">
-  <div class="container-navigation"></div>
+<div class="container-overall">
+  <div class="container-index-contents">
+    <div class="container-navigation"></div>
 
-  <div class="container-main-content">
-    <div class="card">
-      <h2>研究室の話題</h2>
-      <!-- TODO: showreel -->
-      <div id="container-card-carousel"></div>
-      <!-- End showreel -->
-      <div id="container-awards">
+    <div class="container-main-content">
+      <div class="card">
+        <h2>研究室の話題</h2>
+        <!-- TODO: showreel -->
+        <div id="container-card-carousel"></div>
+        <!-- End showreel -->
+        <div id="container-awards">
 
+        </div>
       </div>
     </div>
-  </div>
 
-  <div id="container-misc-info">
-    <div class="card" id="container-contact-info">
-      <img class="logo" src="/src/assets/logo.png" alt="発達研ロゴ" />
-      <h2 class="contact-title">広島大学　発達心理学研究室</h2>
-      <h2 class="contact-title">お問い合わせ</h2>
-      <div class="container-personal-contact">
-        <img class="contact-avatar" src="/src/assets/avatar_sugimura.jpg" alt="杉村先生" />
-        <p class="personal-contact-name">杉村和美</p>
-        <a class="email-hyperlink" href="mailto:ksugimura@hiroshima-u.ac.jp">ksugimura@hiroshima-u.ac.jp</a>
+    <div id="container-misc-info">
+      <div class="card" id="container-contact-info">
+        <img class="logo" src="/src/assets/logo.png" alt="発達研ロゴ"/>
+        <h2 class="contact-title">広島大学　発達心理学研究室</h2>
+        <h2 class="contact-title">お問い合わせ</h2>
+        <div class="container-personal-contact">
+          <img class="contact-avatar" src="/src/assets/avatar_sugimura.jpg" alt="杉村先生"/>
+          <p class="personal-contact-name">杉村和美</p>
+          <a class="email-hyperlink" href="mailto:ksugimura@hiroshima-u.ac.jp">ksugimura@hiroshima-u.ac.jp</a>
+        </div>
+        <div class="container-personal-contact">
+          <img class="contact-avatar" src="/src/assets/avatar_umemura.jpg" alt="梅村先生"/>
+          <p class="personal-contact-name">梅村比丘</p>
+          <a class="email-hyperlink" href="mailto:umemura@hiroshima-u.ac.jp">umemura@hiroshima-u.ac.jp</a>
+        </div>
       </div>
-      <div class="container-personal-contact">
-        <img class="contact-avatar" src="/src/assets/avatar_umemura.jpg" alt="梅村先生" />
-        <p class="personal-contact-name">梅村比丘</p>
-        <a class="email-hyperlink" href="mailto:umemura@hiroshima-u.ac.jp">umemura@hiroshima-u.ac.jp</a>
+      <div class="copyright">
+        <p id="copyright-year">copyright© 2012</p>
+        <p>Developmental psychology Hiroshima.</p>
+        <p>All Right Reserved.</p>
       </div>
-    </div>
-    <div class="copyright">
-      <p id="copyright-year">copyright© 2012</p>
-      <p>Developmental psychology Hiroshima.</p>
-      <p>All Right Reserved.</p>
     </div>
   </div>
 </div>
 
-<a id="top-button" href="#welcome">
+<a id="top-button" href="#welcome" class="hidden">
   <div id="top">↑</div>
 </a>
 <script type="module" src="/src/index.js"></script>
 <script>
   const year = new Date().getFullYear();
   document.getElementById('copyright-year').innerHTML = `copyright© 2012-${year}`;
+
+  const topButton = document.getElementById('top-button');
+  let previousPosition = 0;
+
+  console.log(window.screen.width / window.devicePixelRatio)
+
+  if (window.screen.width / window.devicePixelRatio <= 1024) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY < previousPosition && window.scrollY > 100) {
+        topButton.classList.remove('hidden');
+        topButton.classList.add('show');
+      } else {
+        topButton.classList.remove('show');
+        topButton.classList.add('hidden');
+      }
+
+      previousPosition = window.scrollY;
+    });
+  }
 </script>
 </body>
 </html>

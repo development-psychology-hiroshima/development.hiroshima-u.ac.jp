@@ -1,5 +1,5 @@
 <template>
-  <div class="container-carousel" @mouseenter="stop()" @mouseleave="start()">
+  <div class="container-carousel" @mouseover="stop()" @mouseout="start()">
     <div class="container-carousel-mask"></div>
     <div class="carousel" v-for="image in showreel">
       <transition name="fade">

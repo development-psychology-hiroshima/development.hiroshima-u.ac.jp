@@ -140,12 +140,20 @@ a {
   }
 }
 
+.container-overall {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+}
+
 .container-index-contents {
   display: grid;
-  margin: 0 clamp(10px, 10rem, 10vh);
+  margin: 0 2rem;
   grid-template-areas: "navigation main-content contact";
-  grid-template-columns: 0.4fr 1.8fr auto;
-  grid-gap: 2rem;
+  grid-template-columns: 1fr 2.3fr 1fr;
+  grid-column-gap: 2rem;
+  max-width: 1500px;
 }
 
 .container-main-content {
@@ -153,11 +161,16 @@ a {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: break-word;
   border-radius: 10px;
   box-shadow: 6px 6px 12px #cccccc,
   -6px -6px 12px #ffffff;
   background-color: #f2f2f2;
   padding: 1.5vw;
+  margin-bottom: 2rem;
+  max-width: calc(100vw - 4rem);
 }
 
 #container-misc-info {
@@ -194,8 +207,8 @@ h2 {
 }
 
 .contact-avatar {
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
 }
 
@@ -210,7 +223,6 @@ h2 {
 }
 
 .copyright {
-  margin-top: 1rem;
   font-size: smaller;
   color: #808080;
   text-align: center;
@@ -223,15 +235,17 @@ h2 {
 @media screen and (max-width: 425px) {
   #top-button {
     position: fixed;
+    opacity: 1;
+    z-index: 1;
     right: 1rem;
     bottom: 1rem;
     color: #494949;
     font-size: x-large;
-    font-weight: 900;
+    font-weight: 700;
     background: #BFD08C;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: max(50px, 15vw);
+    height: max(50px, 15vw);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -239,17 +253,55 @@ h2 {
     -6px -6px 12px #ffffff;
   }
 
+  #top-button.show {
+    animation-name: top-appear;
+    animation-duration: 0.375s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  #top-button.hidden {
+    animation-name: top-disappear;
+    animation-duration: 0.375s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
   #container-misc-info {
     position: relative;
     top: 0;
   }
 
+  .container-overall {
+    width: 100vw;
+  }
+
   .container-index-contents {
-    margin-top: 1.5rem;
+    margin: 1.5rem;
     grid-template-areas:
         "main-content"
         "contact";
     grid-template-columns: 1fr;
     grid-template-rows: max-content;
+  }
+}
+
+@keyframes top-appear {
+  0% {
+    transform: translateY(max(60px, 20vw));
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes top-disappear {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(max(60px, 20vw));
   }
 }
