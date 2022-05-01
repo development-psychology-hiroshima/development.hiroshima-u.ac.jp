@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import {ref} from "vue";
 
 export default {
   name: "mobileMenu",
@@ -27,60 +26,15 @@ export default {
       show: false,
     }
   },
-  setup() {
-    const menuItems = ref([])
-    const yaml = window.jsyaml;
+  props: {
+    settings: {
+      type: Object,
+      required: true,
+    },
+  },
+  setup(props) {
+    const menuItems = props.settings.menuItems;
 
-    const getConfig = async () => {
-      const response = await fetch('config.yml')
-          .then(response => response.text())
-          .catch(error => undefined);
-      try {
-        menuItems.value = yaml.load(response).menuItems;
-      } catch (e) {
-        console.error(e.message);
-        menuItems.value = [
-          {
-            "name": "ホーム",
-            "english": "home",
-            "url": "index.html",
-            "show": true,
-          },
-          {
-            "name": "メンバー紹介",
-            "english": "members",
-            "url": "members.html",
-            "show": true,
-          },
-          {
-            "name": "杉村和美の研究活動",
-            "english": "sugimura's activities",
-            "url": "research_activity_sugimura.html",
-            "show": true,
-          },
-          {
-            "name": "梅村比丘の研究活動",
-            "english": "umemura's activities",
-            "url": "research_activity_umemura.html",
-            "show": true,
-          },
-          {
-            "name": "学生の研究活動",
-            "english": "students' activities",
-            "url": "research_activity_students.html",
-            "show": true,
-          },
-          {
-            "name": "年間スケジュール",
-            "english": "annual schedule",
-            "url": "annual_schedule.html",
-            "show": true,
-          }
-        ];
-      }
-    }
-
-    getConfig();
     return {
       menuItems
     }

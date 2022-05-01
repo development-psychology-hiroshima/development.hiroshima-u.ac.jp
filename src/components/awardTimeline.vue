@@ -1,175 +1,130 @@
 <template>
-<div>test</div>
+  <div v-for="awardYear in timeline">
+    <h2 class="title-award-year">{{ awardYear.year }}年</h2>
+
+    <div v-for="award in awardYear.awards">
+      <ul class="award-text">
+        <li>
+          <span>{{ award.text }}</span>
+          <span v-if="award.url" v-html="getUrlStruct(award.url)"></span>
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
-import {ref} from "vue";
-
 export default {
-  name: "awardTimeline",
-  setup() {
-    const yaml = window.jsyaml;
-    const rawTimeline = ref([]);
+  name: 'AwardTimeline',
+  methods: {
+    getUrlStruct: (url) => `<a class="award-info-link" href="${url}">詳しい情報はこちらです。</a>`,
+  },
+  props: {
+    settings: {
+      type: Object,
+      required: true,
+    },
+  },
+  setup(props) {
 
-    const getConfig = async () => {
-      const response = await fetch('config.yml')
-          .then(response => response.text())
-          .catch(error => undefined);
-      try {
-        rawTimeline.value = yaml.load(response).awards;
-      } catch (e) {
-        console.error(e.message);
-        rawTimeline.value = [
-          {
-            "year": 2022,
-            "text": "杉村和美が共同執筆した『アイデンティティ 時間と関係を生きる』が出版されました。",
-            "url": null
-          },
-          {
-            "year": 2021,
-            "text": "岩佐康弘・日原尚吾・杉村和美の研究発表が，中国四国心理学会第77回大会の大会優秀発表賞を受賞しました(2022.2)。",
-            "url": "https://cspa.hiroshima-u.ac.jp/award.html"
-          },
-          {
-            "year": 2021,
-            "text": "杉村和美・日原尚吾の論文がDevelopmental Psychologyに採択されました(2021.11)。"
-          },
-          {
-            "year": 2021,
-            "text": "日原尚吾が分担執筆した『新・教職課程演習 第8巻 特別活動・生徒指導・キャリア教育』が出版されました。"
-          },
-          {
-            "year": 2021,
-            "text": "岩佐康弘・杉村和美の論文が，第10回青年心理学会学会賞を受賞しました(2021.10)。"
-          },
-          {
-            "year": 2021,
-            "text": "日原尚吾・梅村比丘・岩佐康弘・雜賀智子・杉村和美の論文がDevelopmental Psychologyに掲載されました(2021.8)。",
-            "url": "https://doi.apa.org/doiLanding?doi=10.1037%2Fdev0001275"
-          },
-          {
-            "year": 2021,
-            "text": "岩佐康弘・日原尚吾・梅村比丘・杉村和美の論文 がIdentityに掲載されました(2021.7)。",
-            "url": "https://www.tandfonline.com/doi/full/10.1080/15283488.2021.1954520"
-          },
-          {
-            "year": 2021,
-            "text": "杉村和美の論文が Identityに掲載されました(2021.7)。",
-            "url": "https://www.tandfonline.com/doi/full/10.1080/15283488.2021.1947819"
-          },
-          {
-            "year": 2021,
-            "text": "繁田京ノ輔が国際Identity学会 (ISRI) でStudent Research Awardを受賞しました(2021.6)。"
-          },
-          {
-            "year": 2021,
-            "text": "日原尚吾の研究が，2020年度 小貫英教育賞を受賞しました(2021.5)。"
-          },
-          {
-            "year": 2021,
-            "text": "梅村比丘・杉村和美の論文が Attachment & Human Developmentに掲載されました(2021.4)。",
-            "url": "https://www.tandfonline.com/doi/abs/10.1080/14616734.2021.1881134?journalCode=rahd20"
-          },
-          {
-            "year": 2021,
-            "text": "日原尚吾・杉村和美・梅村比丘・岩佐康弘の論文が Development and Psychopathology に掲載されました (2021.03)。",
-            "url": "https://www.cambridge.org/core/journals/development-and-psychopathology/article/abs/positive-and-negative-valences-of-identities-longitudinal-associations-of-identity-content-valences-with-adaptive-and-maladaptive-functioning-among-japanese-young-adults/F957592F6CEE82FAD1F2DC75A8BD7572"
-          },
-          {
-            "year": 2021,
-            "text": "梅村比丘の論文が Current Psychologyに掲載されました(2021.01)。",
-            "url": "https://link.springer.com/article/10.1007/s12144-020-01297-9"
-          },
-          {
-            "year": 2021,
-            "text": "梅村比丘の論文が PLoS ONEに掲載されました(2021.01)。",
-            "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0244278"
-          },
-          {
-            "year": 2020,
-            "text": "梅村比丘の論文が Journal of Early Adolescenceに掲載されました(2020.12)。",
-            "url": "https://www.sciencedirect.com/science/article/abs/pii/S092523122020000X"
-          },
-          {
-            "year": 2020,
-            "text": "杉村和美・岩佐康弘(認知心理学研究室との共同研究) の論文がScientific Reportsに掲載されました(2020.12)。",
-            "url": "https://www.nature.com/articles/s41598-020-79444-2"
-          },
-          {
-            "year": 2020,
-            "text": "日原尚吾・雜賀智子・杉村和美の論文がIdentityに掲載されました(2020.11)。",
-            "url": "https://doi.org/10.1080/15283488.2020.1839757"
-          },
-          {
-            "year": 2020,
-            "text": "梅村比丘がHIRAKU-Global選抜教員に就任しました(2020.10)。",
-            "url": "https://www.hiroshima-u.ac.jp/hiraku-g"
-          },
-          {
-            "year": 2020,
-            "text": "杉村和美・日原尚吾の論文がJournal of Adolescence に掲載されました(2020.09)。",
-            "url": "https://www.sciencedirect.com/science/article/pii/S0140197120301408?via%3Dihub"
-          },
-          {
-            "year": 2020,
-            "text": "杉村和美・日原尚吾の論文がJournal of Social and Personal Relationships に掲載されました(2020.08)。",
-            "url": "https://journals.sagepub.com/doi/10.1177/0265407520948621"
-          },
-          {
-            "year": 2020,
-            "text": "日原尚吾が助教に就任しました(2020.04.01)。"
-          },
-          {
-            "year": 2020,
-            "text": "岩佐康弘が日本学術振興会特別研究員（DC2）に採用されました (2020.04.01)。"
-          },
-          {
-            "year": 2019,
-            "text": "杉村和美の論文がJournal of Youth and Adolescenceに採択されました。",
-            "url": "https://link.springer.com/article/10.1007/s10964-019-01182-0"
-          },
-          {
-            "year": 2019,
-            "text": "杉村和美の論文がChild Development Perspecives に採択されました。",
-            "url": "https://srcd.onlinelibrary.wiley.com/doi/full/10.1111/cdep.12359"
-          },
-          {
-            "year": 2019,
-            "text": "梅村比丘が三原市で児童思春期の愛着に関する講演を12月12日に行いました。",
-            "url": "https://development.hiroshima-u.ac.jp/ad/20191212_miharakouen.pdf"
-          },
-          {
-            "year": 2019,
-            "text": "徳岡大が日本パーソナリティ心理学会第28回大会で優秀発表賞を受賞しました。"
-          },
-          {
-            "year": 2019,
-            "text": "梅村比丘が日本心理学会第83回大会でアタッチメントのシンポジウムを行いました。",
-            "url": "https://development.hiroshima-u.ac.jp/rese/Tomotaka_Umemura/Nissinsinpo.pdf"
-          },
-          {
-            "year": 2019,
-            "text": "Masaryk UniversityのDr. Lukas BlinkaとDr. Anna Sevcikovaが講演を行いました。",
-            "url": "https://development.hiroshima-u.ac.jp/ad/Addiction%20Research%20Poster.pdf"
-          },
-          {
-            "year": 2019,
-            "text": "日原尚吾・石橋彩波・梅村比丘・杉村和美の論文がEmerging Adulthoodに掲載されました。",
-            "url": "https://journals.sagepub.com/doi/full/10.1177/2167696819858457"
-          }
-        ];
+    const rawTimeline = props.settings.awards;
+    // {
+    //   "year": 2021,
+    //   "awards": [ {"text": "xxx", "url": "xxx"}, … ]
+    // }
+    const timelineComposer = (prev, curr) => {
+      // To prevent the first item being an Object instead of Array
+      const previous = [].concat(prev);
+      const previousAward = previous.pop();
+      if (previousAward.year !== curr.year) {
+        if ("awards" in previousAward) {
+          return [...previous, previousAward, curr];
+        } else {
+          return [...previous,
+            {
+              year: previousAward.year,
+              awards: [{
+                text: previousAward.text,
+                url: previousAward.url
+              }]
+            },
+            curr
+          ];
+        }
+      } else {
+        if ("awards" in previousAward) {
+          return [...previous, {
+            year: previousAward.year,
+            awards: [...previousAward.awards, {
+              text: curr.text,
+              url: curr.url
+            }]
+          }]
+        } else {
+          return [
+            ...previous,
+            {
+              year: previousAward.year,
+              awards: [
+                {
+                  text: previousAward.text,
+                  url: previousAward.url
+                },
+                {
+                  text: curr.text,
+                  url: curr.url
+                }
+              ]
+            }
+          ]
+        }
       }
     }
 
-    getConfig();
+    const timeline = rawTimeline.reduce(timelineComposer);
 
     return {
       rawTimeline,
+      timeline
     }
   }
 }
 </script>
 
-<style scoped>
+<style>
+
+.award-text {
+  padding: 0.5em 1rem 0.5em 3rem;
+  list-style: circle;
+  grid-area: text;
+}
+
+.title-award-year {
+  border-radius: 10px 10px 0 0;
+  padding: 0.5em 0 0.5em 3rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #f2f2f2d9;
+  backdrop-filter: blur(4px);
+}
+
+@supports not (backdrop-filter: blur(4px)) {
+  .award-year {
+    background: #f2f2f2;
+  }
+}
+
+@supports not (position: sticky) {
+  .title-award-year {
+    position: relative;
+  }
+}
+
+.award-info-link {
+  display: inline-block;
+  color: #0099ff;
+  text-decoration-line: underline;
+}
 
 </style>

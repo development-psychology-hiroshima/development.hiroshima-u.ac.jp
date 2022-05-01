@@ -12,10 +12,14 @@
 <script>
 import {onUnmounted, ref} from "vue";
 
-const yaml = window.jsyaml;
-
 export default {
   name: "bannerCarousel",
+  props: {
+    settings: {
+      type: Object,
+      required: true
+    }
+  },
   methods: {
     getRealPath: (path) => {
       let returnPath = "https://development.hiroshima-u.ac.jp/" + path;
@@ -29,33 +33,17 @@ export default {
       return returnPath;
     }
   },
-  setup() {
-    const images = ref([]);
-    const showreel = ref([]);
+  setup(props) {
+    const images = props.settings.bannerImages;
+    const showreel = [];
 
-    const getConfig = async () => {
-      const response = await fetch('config.yml')
-          .then(response => response.text())
-          .catch(e => undefined);
-      try {
-        images.value = yaml.load(response).bannerImages;
-        for (let i = 0; i < images.value.length; i++) {
-          showreel.value.push({id: i, src: images.value[i]});
-        }
-      } catch (e) {
-        images.value = [
-          "images/syugo/sugimuraken_syugo202203.jpeg",
-          "images/syugo/umemuraken_syugo202203.jpeg",
-          "images/2019_aki_sinkan.jpeg",
-          "https://development.hiroshima-u.ac.jp/images/sche/201804shinkan.jpg",
-        ];
-        for (let i = 0; i < images.value.length; i++) {
-          showreel.value.push({id: i, src: images.value[i]});
-        }
-      }
+    for (let i = 0; i < images.length; i++) {
+      showreel.push({
+        id: i,
+        src: images[i]
+      });
     }
 
-    getConfig();
 
     const index = ref(0);
     let timer = null;
@@ -64,7 +52,7 @@ export default {
       clearInterval(timer)
       timer = setInterval(() => {
         index.value++;
-        if (index.value >= showreel.value.length) {
+        if (index.value >= showreel.length) {
           index.value = 0
         }
       }, 8000)
@@ -72,11 +60,11 @@ export default {
 
     const stop = () => {
       if (timer) clearInterval(timer);
-      console.log("Banner image switching stopped.");
+      // console.log("Banner image switching stopped.");
     }
     const start = () => {
       autoPlay()
-      console.log("Banner image switching started.");
+      // console.log("Banner image switching started.");
     }
 
     autoPlay();

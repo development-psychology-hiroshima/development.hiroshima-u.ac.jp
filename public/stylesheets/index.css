@@ -1,7 +1,7 @@
 html,
 body {
   font-family: "Noto Sans JP", "Hiragino Sans", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
-  color: #090909;
+  color: #333333;
   background: #f2f2f2;
   scroll-behavior: smooth;
 }
@@ -17,13 +17,19 @@ a {
   text-decoration-line: none;
 }
 
+p > a {
+  display: inline-block;
+  color: #0099ff;
+  text-decoration-line: underline;
+}
+
 #container-banner {
   position: fixed;
   width: calc(100vw - clamp(10px, 1vw, 20px) * 2);
   padding: clamp(10px, 0.5vh, 15px) clamp(10px, 2rem, 20px);
   top: 0;
   background-size: cover !important;
-  background: url("/src/assets/banner.svg") no-repeat bottom;
+  background: url("/public/images/banner.svg") no-repeat bottom;
   min-height: clamp(10vh, 6vh, 110px);
   z-index: 9999;
 }
@@ -168,7 +174,7 @@ a {
   box-shadow: 6px 6px 12px #cccccc,
   -6px -6px 12px #ffffff;
   background-color: #f2f2f2;
-  padding: 1.5vw;
+  padding: 1.5rem;
   margin-bottom: 2rem;
   max-width: calc(100vw - 4rem);
 }
@@ -188,10 +194,17 @@ a {
   align-items: center;
 }
 
-h2 {
-  font-size: larger;
+h2, h3 {
   width: fit-content;
   background: linear-gradient(to top, transparent 5%, #bfd08c 5%, #bfd08c 10%, #bfd08c 40%, transparent 0%);
+}
+
+h2 {
+  font-size: larger;
+}
+
+h3 {
+  font-size: large;
 }
 
 .logo {
@@ -304,4 +317,80 @@ h2 {
     opacity: 0;
     transform: translateY(max(60px, 20vw));
   }
+}
+
+#container-awards {
+  max-height: 40vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-top: 1em;
+  /*border: 1px solid #808080;*/
+  border-bottom: 2px dotted #808080;
+  border-radius: 10px;
+  box-shadow: 6px 6px 12px #cccccc8f,
+  -6px -6px 12px #ffffff;
+}
+
+@media screen and (max-width: 425px) {
+  #container-awards {
+    box-shadow: none;
+    border: none;
+  }
+}
+
+.container-align-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-content {
+  margin-top: 0.5em;
+}
+
+img.lab-description {
+  margin: 1rem 0;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.main-content > p {
+  margin-bottom: 1em;
+}
+
+.main-content >p:before {
+  content: "　　";
+}
+
+.signature {
+  width: 100%;
+  text-align: right;
+}
+
+.name {
+  font-weight: 700;
+}
+
+.container-title {
+  margin-top: 1em;
+}
+
+.support-title {
+  counter-increment: support-count;
+}
+
+.support-title:before {
+  content: counter(support-count) ".";
+}
+
+.support-content:before {
+  content: "　" !important;
+}
+
+span.highlight {
+  background: linear-gradient(to top, transparent 5%, #bfd08c 5%, #bfd08c 10%, #bfd08c 40%, transparent 0%);
+}
+
+.no-before:before {
+  content: none !important;
 }
