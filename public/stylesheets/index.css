@@ -323,7 +323,7 @@ h3 {
   max-height: 40vh;
   overflow-y: scroll;
   overflow-x: hidden;
-  margin-top: 1em;
+  margin: 1em 0 2em 0;
   /*border: 1px solid #808080;*/
   border-bottom: 2px dotted #808080;
   border-radius: 10px;
@@ -393,4 +393,8 @@ span.highlight {
 
 .no-before:before {
   content: none !important;
+}
+
+.split-line {
+  margin-bottom: 2rem;
 }
