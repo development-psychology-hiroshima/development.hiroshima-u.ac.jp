@@ -17,7 +17,8 @@ a {
   text-decoration-line: none;
 }
 
-p > a {
+p > a,
+li > a {
   display: inline-block;
   color: #0099ff;
   text-decoration-line: underline;
@@ -354,7 +355,7 @@ img.lab-description {
 }
 
 .main-content > p:before {
-  content: "　　";
+  content: "　";
 }
 
 .signature {
@@ -415,4 +416,17 @@ span.highlight {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.no-list-style,
+.papers-list {
+  list-style: none;
+}
+
+.papers-list > li {
+  margin-bottom: 1em;
+}
+
+.papers-list > li:last-child {
+  margin-bottom: 0;
 }

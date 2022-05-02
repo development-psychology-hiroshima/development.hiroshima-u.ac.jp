@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" href="/public/favicons/favicon.ico"/>
+  <link
+    href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap&subset=japanese"
+    rel="stylesheet"
+  >
+  <link rel="manifest" href="/public/manifest.json">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0"
+  />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <meta http-equiv="Content-Type" content="text/css"/>
+  <meta http-equiv="Content-Type" content="text/javascript"/>
+  <link rel="stylesheet" href="/public/stylesheets/index.css"/>
+  <meta
+    name="description"
+    content="人間のこころの発達について、人が人として生きるうえでとても大切な社会性や社会的適応に焦点をあてて探究しています"
+  />
+  <meta
+    name="keywords"
+    content="心理学, 広島大学, 広大, 学部, 大学院, 発達心理学研究室, 発達心理学, こころの発達, 児童と青年, 発達, アタッチメント, アイデンティティ, dynamic systems"
+  />
+  <title>広島大学発達心理学研究室</title>
+  <script type="module" src="/src/dependencies/js-yaml.min.js"></script>
+</head>
+<body>
+
+
+<a id="top-button" href="#top-target" class="hidden">
+  <div id="top">↑</div>
+</a>
+
+<script type="module" src="/src/common.js" async></script>
+<script>
+  const year = new Date().getFullYear();
+  document.getElementById('copyright-year').innerHTML = `copyright© 2012-${year}`;
+
+  const topButton = document.getElementById('top-button');
+  let previousPosition = 0;
+
+  console.log(window.screen.width / window.devicePixelRatio);
+
+  if (window.screen.width / window.devicePixelRatio <= 1024) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY < previousPosition && window.scrollY > 100) {
+        topButton.classList.remove('hidden');
+        topButton.classList.add('show');
+      } else {
+        topButton.classList.remove('show');
+        topButton.classList.add('hidden');
+      }
+
+      previousPosition = window.scrollY;
+    });
+  }
+</script>
+</body>
+</html>

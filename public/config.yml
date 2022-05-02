@@ -248,7 +248,7 @@ members:
     name: 高嶋修平
     position: 学部4年
     image: https://development.hiroshima-u.ac.jp/images/people/takashima5.jpg
-    interest: アイデンティティ，青年期，対人関係，発達心理学
+    interest: acculturation (文化変容)/アイデンティティ形成/留学・移民
     teacher: 杉村和美
   -
     name: 砂川亜美
@@ -327,7 +327,6 @@ obog:
       -
         title: 進路
         content: 民間企業（ウェディング）
-
 
 # Menu items to show in the navigation menu.
 # please DO USE ENGLISH HALF-WIDTH spaces!

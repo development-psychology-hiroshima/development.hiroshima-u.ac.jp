@@ -54,9 +54,10 @@ export default {
   }
   .member-image {
     max-width: calc(100vw - 8rem) !important;
-    max-height: 100%;
+    max-height: max(15vh, 100px);
     margin-right: 0 !important;
     margin-bottom: 1em;
+    justify-self: center;
   }
 
   .name, .position {
@@ -88,7 +89,6 @@ export default {
   max-width: 15vw;
   border-radius: 10px;
   align-self: center;
-  justify-self: center;
   margin-right: 1em;
 }
 
