@@ -14,6 +14,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'AwardTimeline',
   methods: {
@@ -84,7 +85,6 @@ export default {
     const timeline = rawTimeline.reduce(timelineComposer);
 
     return {
-      rawTimeline,
       timeline
     }
   }

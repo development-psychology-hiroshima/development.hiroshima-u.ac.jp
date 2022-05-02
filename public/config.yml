@@ -157,6 +157,17 @@ graduates:
 members:
   -
     name: 杉村 和美
+    position: 教授
+    image: https://development.hiroshima-u.ac.jp/images/people/Kazumi_Sugimura.jpg
+    intro: 東京生まれ、名古屋育ち。教員になってからは愛知学泉女子短期大学、追手門学院大学、名古屋大学、広島大学の４つを経験していますので，多様な背景を持つ学生・院生の指導ができると思います。一緒にアイデンティティの発達を研究したい人は、ぜひ来てください。
+    field: アイデンティティ理論，自律，大人への移行，親子関係，仲間関係，文化の中での発達
+    others:
+      -
+        title: 連絡先
+        content: <a href="mailto:ksugimura@hiroshima-u.ac.jp">ksugimura@hiroshima-u.ac.jp</a>
+      -
+        title: 研究者総覧
+        content: <a href="https://goo.gl/HG59FA" target="_blank"> https://goo.gl/HG59FA</a>
 
 
 
