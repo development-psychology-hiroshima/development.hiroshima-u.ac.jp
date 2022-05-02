@@ -34,5 +34,94 @@
     当サイトではJavaScriptを使用しているコンテンツがありますので、ブラウザ設定でJavaScriptを有効にしてご利用ください。</p>
 </noscript>
 
+<div id="container-banner">
+  <div id="banner-contents">
+    <div id="lab-title">広島大学 発達心理学研究室</div>
+    <div id="mobile-menu"></div>
+  </div>
+</div>
+<div id="container-banner-carousel">
+  <div id="welcome">
+    <p class="welcome-1">ようこそ</p>
+    <p class="welcome-2">発達研へ</p>
+  </div>
+  <div id="vue-carousel"></div>
+</div>
+
+<div id="container-desktop-menu"></div>
+
+<div class="container-index-contents">
+  <div class="container-navigation"></div>
+
+  <div class="container-main-content">
+    <div class="split-line">
+      <h2 id="top-target">メンバー紹介</h2>
+    </div>
+
+    <div id="container-members">
+      <div class="loading"></div>
+    </div>
+  </div>
+
+  <div id="container-misc-info">
+    <div class="card" id="container-contact-info">
+      <img class="logo" src="/images/logo.png" alt="発達研ロゴ"/>
+      <h2 class="contact-title">広島大学発達心理学研究室</h2>
+      <h2 class="contact-title">お問い合わせ</h2>
+      <div class="container-personal-contact">
+        <img class="contact-avatar"
+             src="/images/avatar_sugimura.jpg" alt="杉村先生"
+        />
+        <p class="personal-contact-name">杉村和美</p>
+        <a class="email-hyperlink"
+           href="mailto:ksugimura@hiroshima-u.ac.jp"
+        >ksugimura@hiroshima-u.ac.jp</a>
+      </div>
+      <div class="container-personal-contact">
+        <img class="contact-avatar"
+             src="/images/avatar_umemura.jpg" alt="梅村先生"
+        />
+        <p class="personal-contact-name">梅村比丘</p>
+        <a class="email-hyperlink"
+           href="mailto:umemura@hiroshima-u.ac.jp"
+        >umemura@hiroshima-u.ac.jp</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p id="copyright-year">copyright© 2012</p>
+      <p>Developmental psychology Hiroshima.</p>
+      <p>All Right Reserved.</p>
+    </div>
+  </div>
+</div>
+
+<a id="top-button" href="#top-target" class="hidden">
+  <div id="top">↑</div>
+</a>
+
+<script type="module" src="/src/members.js" async></script>
+<script>
+  const year = new Date().getFullYear();
+  document.getElementById('copyright-year').innerHTML = `copyright© 2012-${year}`;
+
+  const topButton = document.getElementById('top-button');
+  let previousPosition = 0;
+
+  console.log(window.screen.width / window.devicePixelRatio);
+
+  if (window.screen.width / window.devicePixelRatio <= 1024) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY < previousPosition && window.scrollY > 100) {
+        topButton.classList.remove('hidden');
+        topButton.classList.add('show');
+      } else {
+        topButton.classList.remove('show');
+        topButton.classList.add('hidden');
+      }
+
+      previousPosition = window.scrollY;
+    });
+  }
+</script>
 </body>
 </html>

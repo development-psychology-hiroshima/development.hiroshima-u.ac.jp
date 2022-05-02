@@ -68,6 +68,7 @@ p > a {
   position: relative;
   z-index: 1;
   height: fit-content;
+  min-height: 2rem;
   transform: translateY(-50%);
   display: flex;
   justify-content: center;

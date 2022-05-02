@@ -10,6 +10,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: fileURLToPath(new URL('./index.html', import.meta.url)),
+        members: fileURLToPath(new URL('./members.html', import.meta.url)),
       }
     }
   }
