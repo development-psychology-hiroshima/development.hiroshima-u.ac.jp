@@ -13,6 +13,8 @@ export default defineConfig({
         members: fileURLToPath(new URL('./members.html', import.meta.url)),
         research_activity_sugimura: fileURLToPath(new URL('./research_activity_sugimura.html', import.meta.url)),
         research_activity_umemura: fileURLToPath(new URL('./research_activity_umemura.html', import.meta.url)),
+        research_activity_students: fileURLToPath(new URL('./research_activity_students.html', import.meta.url)),
+        annual_schedule: fileURLToPath(new URL('./annual_schedule.html', import.meta.url)),
       }
     }
   }

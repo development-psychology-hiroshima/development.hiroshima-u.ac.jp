@@ -198,7 +198,7 @@ li > a,
   align-items: center;
 }
 
-h2, h3 {
+h2, h3, h4 {
   width: fit-content;
   background: linear-gradient(to top, transparent 5%, #bfd08c 5%, #bfd08c 10%, #bfd08c 40%, transparent 0%);
 }
