@@ -1,5 +1,5 @@
 <template>
-  <mobile-menu :settings="settings"/>
+  <mobile-menu :settings="settings" />
 </template>
 
 <script>
@@ -8,17 +8,15 @@ import mobileMenu from "./mobileMenu.vue";
 export default {
   name: "mobileMenuWrapper",
   components: {
-    mobileMenu
+    mobileMenu,
   },
   inject: ["config"],
   data() {
     return {
-      settings: this.config
-    }
-  }
-}
+      settings: this.config,
+    };
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

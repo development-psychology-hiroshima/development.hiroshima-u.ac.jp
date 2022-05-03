@@ -1,7 +1,10 @@
 <template>
-<ul>
-  <li v-for="activity in activities" v-html="getStructuredText(activity)"></li>
-</ul>
+  <ul>
+    <li
+      v-for="activity in activities"
+      v-html="getStructuredText(activity)"
+    ></li>
+  </ul>
 </template>
 
 <script>
@@ -17,9 +20,9 @@ export default {
       } else {
         return `<p>${object.title}</p>`;
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>

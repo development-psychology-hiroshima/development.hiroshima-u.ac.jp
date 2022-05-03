@@ -1,10 +1,14 @@
 <template>
-  <a v-for="menuItem in menuItems" :href="menuItem.url"
-     :style="{display: !(false === menuItem.show) ? 'flex' : 'none'}"
+  <a
+    v-for="menuItem in menuItems"
+    :href="menuItem.url"
+    :style="{ display: !(false === menuItem.show) ? 'flex' : 'none' }"
   >
     <div class="container-desktop-menu-item">
       <p class="desktop-menu-item title">{{ menuItem.name }}</p>
-      <p class="desktop-menu-item subtitle">{{ menuItem.english ? menuItem.english : '' }}</p>
+      <p class="desktop-menu-item subtitle">
+        {{ menuItem.english ? menuItem.english : "" }}
+      </p>
     </div>
   </a>
 </template>
@@ -22,11 +26,10 @@ export default {
     const menuItems = props.settings.menuItems;
 
     return {
-      menuItems
-    }
-  }
-}
-
+      menuItems,
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -43,7 +46,7 @@ export default {
   font-weight: bold;
   min-width: 10vw;
   margin: 0 2vw;
-  transition: all .375s ease-in-out;
+  transition: all 0.375s ease-in-out;
 }
 
 .desktop-menu-item {
@@ -57,10 +60,10 @@ export default {
 .container-desktop-menu-item:hover {
   transform: scale(1.02);
   box-shadow: 10px 10px 20px 0 rgb(0 0 0 / 20%);
-  background: #BFD08C;
+  background: #bfd08c;
 }
 
 a {
-  transition: all .375s ease-in-out;
+  transition: all 0.375s ease-in-out;
 }
 </style>

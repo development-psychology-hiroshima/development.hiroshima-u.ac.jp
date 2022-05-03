@@ -2,7 +2,12 @@
   <div class="card container-member">
     <h3 class="name">{{ member.name }}</h3>
     <h3 class="position">{{ member.position }}</h3>
-    <img class="member-image" v-if="member.image" :src="member.image" :alt="member.name + ' 写真'">
+    <img
+      class="member-image"
+      v-if="member.image"
+      :src="member.image"
+      :alt="member.name + ' 写真'"
+    />
     <div class="member-description">
       <div class="container-description" v-if="member.intro">
         <p class="title">自己紹介</p>
@@ -29,17 +34,17 @@ export default {
   name: "memberShowbox",
   props: {
     member: Object,
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
 .container-member {
   display: grid;
   grid-template-areas:
-      "title title"
-      "position position"
-      "photo description";
+    "title title"
+    "position position"
+    "photo description";
   word-break: break-all;
 }
 
@@ -47,10 +52,10 @@ export default {
   .container-member {
     width: calc(100vw - 6rem);
     grid-template-areas:
-        "photo"
-        "title"
-        "position"
-        "description";
+      "photo"
+      "title"
+      "position"
+      "description";
   }
   .member-image {
     max-width: calc(100vw - 8rem) !important;
@@ -60,11 +65,13 @@ export default {
     justify-self: center;
   }
 
-  .name, .position {
+  .name,
+  .position {
     justify-self: center;
   }
 
-  p.text, p.title {
+  p.text,
+  p.title {
     display: block !important;
   }
 

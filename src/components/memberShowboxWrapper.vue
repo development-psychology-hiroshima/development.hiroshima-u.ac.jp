@@ -1,7 +1,7 @@
 <template>
-  <member-showbox v-for="member in members" :member="member"/>
+  <member-showbox v-for="member in members" :member="member" />
   <h2>OB・OG</h2>
-  <member-showbox v-for="member in obog" :member="member"/>
+  <member-showbox v-for="member in obog" :member="member" />
 </template>
 
 <script>
@@ -14,12 +14,12 @@ export default {
     return {
       members: this.config.members,
       obog: this.config.obog,
-    }
+    };
   },
   components: {
     memberShowbox,
   },
-}
+};
 </script>
 
 <style scoped>

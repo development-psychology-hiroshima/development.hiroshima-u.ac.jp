@@ -3,35 +3,40 @@
     <div class="container-carousel-mask"></div>
     <div class="carousel" v-for="image in showreel">
       <transition name="fade">
-        <img class="banner-carousel-image" :src="getRealPath(image.src)" v-show="index === image.id" alt="発達研集合写真"/>
+        <img
+          class="banner-carousel-image"
+          :src="getRealPath(image.src)"
+          v-show="index === image.id"
+          alt="発達研集合写真"
+        />
       </transition>
     </div>
   </div>
 </template>
 
 <script>
-import {onUnmounted, ref} from "vue";
+import { onUnmounted, ref } from "vue";
 
 export default {
   name: "bannerCarousel",
   props: {
     settings: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   methods: {
     getRealPath: (path) => {
       let returnPath = "https://development.hiroshima-u.ac.jp/" + path;
       if (!path.startsWith("/")) {
-        const regex = new RegExp("^https?:\/\/development.hiroshima-u.ac.jp\/")
+        const regex = new RegExp("^https?:\/\/development.hiroshima-u.ac.jp\/");
         if (regex.test(path)) {
           returnPath = path;
         }
       }
 
       return returnPath;
-    }
+    },
   },
   setup(props) {
     const images = props.settings.bannerImages;
@@ -40,47 +45,46 @@ export default {
     for (let i = 0; i < images.length; i++) {
       showreel.push({
         id: i,
-        src: images[i]
+        src: images[i],
       });
     }
-
 
     const index = ref(0);
     let timer = null;
 
     const autoPlay = () => {
-      clearInterval(timer)
+      clearInterval(timer);
       timer = setInterval(() => {
         index.value++;
         if (index.value >= showreel.length) {
-          index.value = 0
+          index.value = 0;
         }
-      }, 8000)
-    }
+      }, 8000);
+    };
 
     const stop = () => {
       if (timer) clearInterval(timer);
       // console.log("Banner image switching stopped.");
-    }
+    };
     const start = () => {
-      autoPlay()
+      autoPlay();
       // console.log("Banner image switching started.");
-    }
+    };
 
     autoPlay();
 
     onUnmounted(() => {
-      clearInterval(timer)
-    })
+      clearInterval(timer);
+    });
 
     return {
       index,
       showreel,
       stop,
-      start
-    }
-  }
-}
+      start,
+    };
+  },
+};
 </script>
 
 <style>

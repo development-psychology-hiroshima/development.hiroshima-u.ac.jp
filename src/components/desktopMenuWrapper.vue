@@ -1,5 +1,5 @@
 <template>
-  <desktop-menu :settings="settings"/>
+  <desktop-menu :settings="settings" />
 </template>
 
 <script>
@@ -8,17 +8,15 @@ import desktopMenu from "./desktopMenu.vue";
 export default {
   name: "desktopMenuWrapper",
   components: {
-    desktopMenu
+    desktopMenu,
   },
   inject: ["config"],
   data() {
     return {
-      settings: this.config
-    }
+      settings: this.config,
+    };
   },
-}
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

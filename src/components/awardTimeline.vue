@@ -14,11 +14,11 @@
 </template>
 
 <script>
-
 export default {
-  name: 'AwardTimeline',
+  name: "AwardTimeline",
   methods: {
-    getUrlStruct: (url) => `<a class="award-info-link" href="${url}">詳しい情報はこちらです。</a>`,
+    getUrlStruct: (url) =>
+      `<a class="award-info-link" href="${url}">詳しい情報はこちらです。</a>`,
   },
   props: {
     settings: {
@@ -27,7 +27,6 @@ export default {
     },
   },
   setup(props) {
-
     const rawTimeline = props.settings.awards;
     // {
     //   "year": 2021,
@@ -41,26 +40,35 @@ export default {
         if ("awards" in previousAward) {
           return [...previous, previousAward, curr];
         } else {
-          return [...previous,
+          return [
+            ...previous,
             {
               year: previousAward.year,
-              awards: [{
-                text: previousAward.text,
-                url: previousAward.url
-              }]
+              awards: [
+                {
+                  text: previousAward.text,
+                  url: previousAward.url,
+                },
+              ],
             },
-            curr
+            curr,
           ];
         }
       } else {
         if ("awards" in previousAward) {
-          return [...previous, {
-            year: previousAward.year,
-            awards: [...previousAward.awards, {
-              text: curr.text,
-              url: curr.url
-            }]
-          }]
+          return [
+            ...previous,
+            {
+              year: previousAward.year,
+              awards: [
+                ...previousAward.awards,
+                {
+                  text: curr.text,
+                  url: curr.url,
+                },
+              ],
+            },
+          ];
         } else {
           return [
             ...previous,
@@ -69,30 +77,29 @@ export default {
               awards: [
                 {
                   text: previousAward.text,
-                  url: previousAward.url
+                  url: previousAward.url,
                 },
                 {
                   text: curr.text,
-                  url: curr.url
-                }
-              ]
-            }
-          ]
+                  url: curr.url,
+                },
+              ],
+            },
+          ];
         }
       }
-    }
+    };
 
     const timeline = rawTimeline.reduce(timelineComposer);
 
     return {
-      timeline
-    }
-  }
-}
+      timeline,
+    };
+  },
+};
 </script>
 
 <style>
-
 .award-text {
   padding: 0.5em 1rem 0.5em 3rem;
   list-style: circle;
@@ -126,5 +133,4 @@ export default {
   color: #0099ff;
   text-decoration-line: underline;
 }
-
 </style>

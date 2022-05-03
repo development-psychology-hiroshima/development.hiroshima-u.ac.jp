@@ -9,7 +9,9 @@
       <div class="container-menu-content">
         <ul class="menu-content">
           <li class="menu-item" v-for="menuItem in menuItems">
-            <a :href="menuItem.url" v-if="!(false === menuItem.show)">{{ menuItem.name }}</a>
+            <a :href="menuItem.url" v-if="!(false === menuItem.show)">{{
+              menuItem.name
+            }}</a>
           </li>
         </ul>
       </div>
@@ -18,13 +20,12 @@
 </template>
 
 <script>
-
 export default {
   name: "mobileMenu",
   data() {
     return {
       show: false,
-    }
+    };
   },
   props: {
     settings: {
@@ -36,10 +37,10 @@ export default {
     const menuItems = props.settings.menuItems;
 
     return {
-      menuItems
-    }
-  }
-}
+      menuItems,
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -67,7 +68,8 @@ export default {
   }
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
 }
 
@@ -78,11 +80,11 @@ ul, li {
 }
 
 .menu-line {
-  transition: all .375s ease-in-out;
+  transition: all 0.375s ease-in-out;
 }
 
 .menu-line:after {
-  content: '';
+  content: "";
   display: block;
   width: 100%;
   height: 2px;
@@ -92,7 +94,7 @@ ul, li {
   right: 0;
   bottom: 0;
   margin: auto;
-  transition: .375s ease-in-out;
+  transition: 0.375s ease-in-out;
 }
 
 #focus-controller {
@@ -107,11 +109,12 @@ a {
   display: block;
   color: #494949;
   text-decoration-line: none;
-  transition: all .375s ease-in-out;
+  transition: all 0.375s ease-in-out;
 }
 
-a:hover, a:focus {
-  color: #0099FF;
+a:hover,
+a:focus {
+  color: #0099ff;
   text-decoration-line: underline;
 }
 
@@ -129,7 +132,7 @@ a:hover, a:focus {
 
 .menu-animation-enter-active,
 .menu-animation-leave-active {
-  transition: all .375s ease-in-out;
+  transition: all 0.375s ease-in-out;
 }
 
 .menu-animation-enter-active,
@@ -142,5 +145,4 @@ a:hover, a:focus {
   opacity: 1;
   transform: translateY(0);
 }
-
 </style>

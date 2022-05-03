@@ -27,7 +27,6 @@
   <div class="card">
     <member-researches-common :activities="researchActivity.doctors" />
   </div>
-
 </template>
 
 <script>
@@ -39,14 +38,14 @@ export default {
   inject: ["researches"],
   data() {
     return {
-      researchActivity: this.researches
-    }
+      researchActivity: this.researches,
+    };
   },
   components: {
     memberResearchesCommon,
-    memberResearchesMember
-  }
-}
+    memberResearchesMember,
+  },
+};
 </script>
 
 <style scoped>

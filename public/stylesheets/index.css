@@ -1,7 +1,7 @@
 html,
 body {
   font-family: "Noto Sans JP", "Hiragino Sans", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
-  color: #333333;
+  color: #494949;
   background: #f2f2f2;
   scroll-behavior: smooth;
 }
@@ -439,13 +439,13 @@ span.highlight {
   align-self: center;
 }
 
-.image-caption {
-  align-self: center;
-  margin-bottom: 1em;
-}
-
 @media screen and (max-width: 425px) {
   .introduction-image {
     max-width: calc(100vw - 8rem) !important;
   }
+}
+
+.image-caption {
+  align-self: center;
+  margin-bottom: 1em;
 }

@@ -1,5 +1,5 @@
 <template>
-    <awardTimeline :settings="settings"/>
+  <awardTimeline :settings="settings" />
 </template>
 
 <script>
@@ -13,14 +13,13 @@ export default {
   inject: ["config"],
   data() {
     return {
-      settings: this.config
-    }
-  }
-}
+      settings: this.config,
+    };
+  },
+};
 </script>
 
 <style scoped>
-
 .loading {
   display: flex;
   justify-content: center;
@@ -28,5 +27,4 @@ export default {
   height: 40vh;
   width: 100%;
 }
-
 </style>

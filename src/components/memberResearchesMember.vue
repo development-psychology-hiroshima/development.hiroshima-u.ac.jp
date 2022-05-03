@@ -14,12 +14,12 @@
 export default {
   name: "memberResearchesMember",
   props: {
-    members: Array
+    members: Array,
   },
   methods: {
-    getStructuredText: (url) => `<a href="${url}">${url}</a>`
-  }
-}
+    getStructuredText: (url) => `<a href="${url}">${url}</a>`,
+  },
+};
 </script>
 
 <style scoped>
