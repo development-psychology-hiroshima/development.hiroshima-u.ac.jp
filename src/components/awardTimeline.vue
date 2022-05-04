@@ -18,7 +18,7 @@ export default {
   name: "AwardTimeline",
   methods: {
     getUrlStruct: (url) =>
-      `<a class="award-info-link" href="${url}">詳しい情報はこちらです。</a>`,
+      `<a class="award-info-link" target="_blank" href="${url}">詳しい情報はこちらです。</a>`,
   },
   props: {
     settings: {
