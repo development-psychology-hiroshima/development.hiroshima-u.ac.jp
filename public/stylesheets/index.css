@@ -1,6 +1,8 @@
 html,
 body {
-  font-family: "Noto Sans JP", "Hiragino Sans", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  font-family: "Noto Sans JP", "Hiragino Sans", "游ゴシック Medium",
+    "Yu Gothic Medium", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3",
+    "メイリオ", sans-serif;
   color: #494949;
   background: #f2f2f2;
   scroll-behavior: smooth;
@@ -19,6 +21,7 @@ a {
 
 p > a,
 li > a,
+.month-content > a,
 #umemura.image-caption {
   display: inline-block;
   color: #0099ff;
@@ -126,12 +129,12 @@ li > a,
 }
 
 .welcome-1:after {
-  content: '、';
+  content: "、";
   position: absolute;
 }
 
 .welcome-2:after {
-  content: '。';
+  content: "。";
   position: absolute;
 }
 
@@ -174,8 +177,7 @@ li > a,
   flex-direction: column;
   overflow-wrap: break-word;
   border-radius: 10px;
-  box-shadow: 6px 6px 12px #cccccc,
-  -6px -6px 12px #ffffff;
+  box-shadow: 6px 6px 12px #cccccc, -6px -6px 12px #ffffff;
   background-color: #f2f2f2;
   padding: 1.5rem;
   margin-bottom: 2rem;
@@ -198,9 +200,18 @@ li > a,
   align-items: center;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   width: fit-content;
-  background: linear-gradient(to top, transparent 5%, #bfd08c 5%, #bfd08c 10%, #bfd08c 40%, transparent 0%);
+  background: linear-gradient(
+    to top,
+    transparent 5%,
+    #bfd08c 5%,
+    #bfd08c 10%,
+    #bfd08c 40%,
+    transparent 0%
+  );
 }
 
 h2 {
@@ -259,15 +270,14 @@ h3 {
     color: #494949;
     font-size: x-large;
     font-weight: 700;
-    background: #BFD08C;
+    background: #bfd08c;
     border-radius: 50%;
     width: max(50px, 15vw);
     height: max(50px, 15vw);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 6px 6px 12px #cccccc,
-    -6px -6px 12px #ffffff;
+    box-shadow: 6px 6px 12px #cccccc, -6px -6px 12px #ffffff;
   }
 
   #top-button.show {
@@ -296,8 +306,8 @@ h3 {
   .container-index-contents {
     margin: 1.5rem;
     grid-template-areas:
-        "main-content"
-        "contact";
+      "main-content"
+      "contact";
     grid-template-columns: 1fr;
     grid-template-rows: max-content;
   }
@@ -331,9 +341,8 @@ h3 {
   /*border: 1px solid #808080;*/
   border-bottom: 2px dotted #808080;
   border-radius: 10px;
-  box-shadow: 6px 6px 12px #cccccc8f,
-  -6px -6px 12px #ffffff;
-  transition: all .375s ease-in-out;
+  box-shadow: 6px 6px 12px #cccccc8f, -6px -6px 12px #ffffff;
+  transition: all 0.375s ease-in-out;
 }
 
 .container-align-center {
@@ -386,7 +395,14 @@ img.lab-description {
 }
 
 span.highlight {
-  background: linear-gradient(to top, transparent 5%, #bfd08c 5%, #bfd08c 10%, #bfd08c 40%, transparent 0%);
+  background: linear-gradient(
+    to top,
+    transparent 5%,
+    #bfd08c 5%,
+    #bfd08c 10%,
+    #bfd08c 40%,
+    transparent 0%
+  );
 }
 
 .no-before:before {
@@ -407,7 +423,7 @@ span.highlight {
   margin: 1rem auto;
   border-radius: 50%;
   background: radial-gradient(#f2f2f2, #f2f2f2 50%, transparent 50%),
-  conic-gradient(transparent, #BFD08C 80%);
+    conic-gradient(transparent, #bfd08c 80%);
   animation: loading 1.5s linear infinite;
 }
 
@@ -433,10 +449,17 @@ span.highlight {
   margin-bottom: 0;
 }
 
+.container-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .introduction-image {
   border-radius: 10px;
   max-width: 40vw;
-  align-self: center;
+  margin-top: 0.5rem;
 }
 
 @media screen and (max-width: 425px) {
@@ -447,5 +470,28 @@ span.highlight {
 
 .image-caption {
   align-self: center;
+  justify-self: center;
+  text-align: center;
   margin-bottom: 1em;
+}
+
+.image-caption:before {
+  content: none !important;
+}
+
+h4.month {
+  background: none;
+  margin-top: 1rem;
+}
+
+.annual-timeline:first-child {
+  margin-top: -1rem;
+}
+
+.month-content {
+  margin-top: 0.5rem;
+}
+
+.month-content > p:before {
+  content: "　　";
 }
