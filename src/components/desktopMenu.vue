@@ -16,19 +16,12 @@
 <script>
 export default {
   name: "desktopMenu",
-  props: {
-    settings: {
-      type: Object,
-      required: true,
-    },
-  },
-  setup(props) {
-    const menuItems = props.settings.menuItems;
-
+  data() {
     return {
-      menuItems,
+      menuItems: this.config.menuItems,
     };
   },
+  inject: ["config"],
 };
 </script>
 

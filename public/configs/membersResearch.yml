@@ -1,5 +1,11 @@
 # 英文字のコロン(:)がある時、テキストを英文字の引用符""で囲ってください。
 # 論文のリンクはない時に、urlの行を記入しない、または空欄/nullにしてください。
+# 内容の前のスペース数を、必ず前文と一致にしてください。
+# 必ず英語の半角スペースを使用してください。
+# If the title includes English colon (:), please surround the title with quotation mark "".
+# If there is no link to the paper, leave blank the url line, or fill the url line with null (no quotation mark needed)
+# DO KEEP WHITESPACE COUNT CONSISTENT
+# DO USE ENGLISH HALF-WIDTH spaces!
 members:
   -
     name: 徳岡　大

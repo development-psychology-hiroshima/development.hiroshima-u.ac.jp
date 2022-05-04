@@ -1,5 +1,8 @@
 # 「研究室の話題」の部分
-# please DO USE ENGLISH HALF-WIDTH spaces!
+# 内容の前のスペース数を、必ず前文と一致にしてください。
+# 必ず英語の半角スペースを使用してください。
+# DO KEEP WHITESPACE COUNT CONSISTENT
+# DO USE ENGLISH HALF-WIDTH spaces!
 awards:
   -
     year: 2022
@@ -110,6 +113,9 @@ awards:
     text: 日原尚吾・石橋彩波・梅村比丘・杉村和美の論文がEmerging Adulthoodに掲載されました。
     url: https://journals.sagepub.com/doi/full/10.1177/2167696819858457
 
+# HPのイメージの部分
+# 写真をいくつに入れても大丈夫。
+# 必ず英語の半角スペースを使用してください。
 # Homepage Image banner.
 # Can add as many images as required.
 # please DO USE ENGLISH HALF-WIDTH spaces!
@@ -119,6 +125,11 @@ bannerImages:
   - images/2019_aki_sinkan.jpeg
   - https://development.hiroshima-u.ac.jp/images/sche/201804shinkan.jpg
 
+# 「卒業生の進路」の部分
+# 内容の前のスペース数を、必ず前文と一致にしてください。
+# 必ず英語の半角スペースを使用してください。
+# DO KEEP WHITESPACE COUNT CONSISTENT
+# DO USE ENGLISH HALF-WIDTH spaces!
 graduates:
   -
     year: 2021
@@ -153,7 +164,13 @@ graduates:
     year: 2013
     undergrad: 学部生(3名)：大学院進学(2名)，公務員(1名：児童厚生施設)
 
-
+# 「メンバー紹介」の部分
+# 内容の前のスペース数を、必ず前文と一致にしてください。
+# 必ず英語の半角スペースを使用してください。
+# DO KEEP WHITESPACE COUNT CONSISTENT
+# DO USE ENGLISH HALF-WIDTH spaces!
+# DO KEEP WHITESPACE COUNT CONSISTENT
+# DO USE ENGLISH HALF-WIDTH spaces!
 members:
   -
     name: 杉村 和美
@@ -327,7 +344,7 @@ obog:
       -
         title: 進路
         content: 民間企業（ウェディング）
-
+# メニューの部分
 # Menu items to show in the navigation menu.
 # please DO USE ENGLISH HALF-WIDTH spaces!
 menuItems:

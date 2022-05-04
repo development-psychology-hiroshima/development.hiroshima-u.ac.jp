@@ -25,21 +25,10 @@ export default {
   data() {
     return {
       show: false,
+      menuItems: this.config.menuItems,
     };
   },
-  props: {
-    settings: {
-      type: Object,
-      required: true,
-    },
-  },
-  setup(props) {
-    const menuItems = props.settings.menuItems;
-
-    return {
-      menuItems,
-    };
-  },
+  inject: ["config"],
 };
 </script>
 
