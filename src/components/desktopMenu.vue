@@ -27,6 +27,7 @@ export default {
 
 <style scoped>
 .container-desktop-menu-item {
+  counter-increment: item;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -37,7 +38,7 @@ export default {
   border-radius: 10px;
   box-shadow: 5px 5px 20px 0 rgb(0 0 0 / 16%);
   font-weight: bold;
-  min-width: 10vw;
+  min-width: 8vw;
   margin: 0 2vw;
   transition: all 0.375s ease-in-out;
 }
