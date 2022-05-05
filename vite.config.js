@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     target: 'esnext',
+    manifest: true,
     rollupOptions: {
       input: {
         index: fileURLToPath(new URL('./index.html', import.meta.url)),
