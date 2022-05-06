@@ -2,7 +2,6 @@
   <div class="container-carousel" @mouseover="stop()" @mouseout="start()">
     <div class="container-carousel-mask"></div>
     <div class="carousel" v-for="image in showreel">
-      <!-- FIXME: under certain condition will show blank image -->
       <transition name="fade">
         <img
           class="banner-carousel-image"
@@ -90,6 +89,8 @@ export default {
   overflow: hidden;
   display: grid;
   grid-template-areas: "carousel";
+  background: url("https://development.hiroshima-u.ac.jp/images/sche/201804shinkan.jpg") center;
+  background-size: 110% auto;
 }
 
 .carousel {
