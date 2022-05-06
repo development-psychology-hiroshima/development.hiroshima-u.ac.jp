@@ -110,7 +110,7 @@ export default {
   height: 50vh;
   object-fit: cover;
   animation-name: carousel-scale;
-  animation-duration: 10s;
+  animation-duration: 15s;
   animation-timing-function: ease-in-out;
 }
 
@@ -123,7 +123,7 @@ export default {
 /*noinspection CssUnusedSymbol*/
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1.5s ease-in-out;
+  transition: opacity 3.75s ease-in-out;
 }
 
 /*noinspection CssUnusedSymbol*/
