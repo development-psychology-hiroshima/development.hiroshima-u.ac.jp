@@ -2,6 +2,7 @@
   <div class="container-carousel" @mouseover="stop()" @mouseout="start()">
     <div class="container-carousel-mask"></div>
     <div class="carousel" v-for="image in showreel">
+      <!-- FIXME: under certain condition will show blank image -->
       <transition name="fade">
         <img
           class="banner-carousel-image"
@@ -15,16 +16,10 @@
 </template>
 
 <script>
-import { onUnmounted, ref } from "vue";
+import { onUnmounted, ref, inject } from "vue";
 
 export default {
   name: "bannerCarousel",
-  props: {
-    settings: {
-      type: Object,
-      required: true,
-    },
-  },
   methods: {
     getRealPath: (path) => {
       let returnPath = "https://development.hiroshima-u.ac.jp/" + path;
@@ -38,8 +33,8 @@ export default {
       return returnPath;
     },
   },
-  setup(props) {
-    const images = props.settings.bannerImages;
+  setup() {
+    const images = inject("config").bannerImages;
     const showreel = [];
 
     for (let i = 0; i < images.length; i++) {
@@ -75,6 +70,7 @@ export default {
 
     onUnmounted(() => {
       clearInterval(timer);
+      index.value = 0;
     });
 
     return {

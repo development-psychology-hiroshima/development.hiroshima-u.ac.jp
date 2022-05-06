@@ -14,20 +14,16 @@
 </template>
 
 <script>
+import { inject } from "vue";
+
 export default {
   name: "AwardTimeline",
   methods: {
     getUrlStruct: (url) =>
       `<a class="award-info-link" target="_blank" href="${url}">詳しい情報はこちらです。</a>`,
   },
-  props: {
-    settings: {
-      type: Object,
-      required: true,
-    },
-  },
-  setup(props) {
-    const rawTimeline = props.settings.awards;
+  setup() {
+    const rawTimeline = inject("config").awards;
     // {
     //   "year": 2021,
     //   "awards": [ {"text": "xxx", "url": "xxx"}, … ]

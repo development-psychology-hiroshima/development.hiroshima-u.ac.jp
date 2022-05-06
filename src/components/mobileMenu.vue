@@ -9,9 +9,9 @@
       <div class="container-menu-content">
         <ul class="menu-content">
           <li class="menu-item" v-for="menuItem in menuItems">
-            <a :href="menuItem.url" v-if="!(false === menuItem.show)">{{
-              menuItem.name
-            }}</a>
+            <a :href="menuItem.url" v-if="!(false === menuItem.show)">
+              {{ menuItem.name }}
+            </a>
           </li>
         </ul>
       </div>
