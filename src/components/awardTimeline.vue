@@ -29,8 +29,8 @@ export default {
     //   "awards": [ {"text": "xxx", "url": "xxx"}, … ]
     // }
     const timelineComposer = (prev, curr) => {
-      // To prevent the first item being an Object instead of Array
-      const previous = [].concat(prev);
+      // transform object to array, enables expand
+      const previous = Array.isArray(prev) ? prev : [].concat(prev);
       const previousAward = previous.pop();
       if (previousAward.year !== curr.year) {
         if ("awards" in previousAward) {
@@ -113,7 +113,7 @@ export default {
 }
 
 @supports not (backdrop-filter: blur(4px)) {
-  .award-year {
+  .title-award-year {
     background: #f2f2f2;
   }
 }
