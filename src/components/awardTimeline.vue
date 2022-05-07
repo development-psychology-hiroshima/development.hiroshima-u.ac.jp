@@ -5,8 +5,8 @@
     <div v-for="award in awardYear.awards">
       <ul class="award-text">
         <li>
-          <span>{{ award.text }}</span>
-          <span v-if="award.url" v-html="getUrlStruct(award.url)"></span>
+          <span v-html="getContentStruct(award)"></span>
+<!--          <span v-if="award.url" v-html="getUrlStruct(award.url)"></span>-->
         </li>
       </ul>
     </div>
@@ -21,6 +21,13 @@ export default {
   methods: {
     getUrlStruct: (url) =>
       `<a class="award-info-link" target="_blank" href="${url}">詳しい情報はこちらです。</a>`,
+    getContentStruct: (object) => {
+      if (object.url) {
+        return `<a class="award-info-link" target="_blank" href="${object.url}">${object.text}</a>`;
+      } else {
+        return `${object.text}`;
+      }
+    }
   },
   setup() {
     const rawTimeline = inject("config").awards;
