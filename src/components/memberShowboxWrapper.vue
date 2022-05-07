@@ -1,6 +1,6 @@
 <template>
   <member-showbox v-for="member in members" :member="member" />
-  <h2>OB・OG</h2>
+  <h2><span>OB・OG</span></h2>
   <member-showbox v-for="member in obog" :member="member" />
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="card container-member">
-    <h3 class="name">{{ member.name }}</h3>
+    <h3 class="name"><span>{{ member.name }}</span></h3>
     <h3 class="position">{{ member.position }}</h3>
     <img
       class="member-image"

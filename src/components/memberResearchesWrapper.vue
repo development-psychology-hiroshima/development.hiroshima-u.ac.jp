@@ -1,11 +1,11 @@
 <template>
-  <h3>発達心理学研究室の出身・所属メンバーの主要論文</h3>
+  <h3><span>発達心理学研究室の出身・所属メンバーの主要論文</span></h3>
   <div class="card">
     <member-researches-member :members="researchActivity.members" />
   </div>
 
   <div class="split-line">
-    <h3>過去のメンバーの卒業論文</h3>
+    <h3><span>過去のメンバーの卒業論文</span></h3>
   </div>
 
   <div class="card">
@@ -13,7 +13,7 @@
   </div>
 
   <div class="split-line">
-    <h3>過去のメンバーの修士論文</h3>
+    <h3><span>過去のメンバーの修士論文</span></h3>
   </div>
 
   <div class="card">
@@ -21,7 +21,7 @@
   </div>
 
   <div class="split-line">
-    <h3>過去のメンバーの博士論文</h3>
+    <h3><span>過去のメンバーの博士論文</span></h3>
   </div>
 
   <div class="card">

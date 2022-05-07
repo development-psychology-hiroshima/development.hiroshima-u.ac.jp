@@ -95,9 +95,10 @@ li {
 }
 
 a {
-  display: block;
   color: #494949;
   text-decoration-line: none;
+  line-height: 0.45em;
+  border-bottom: .45em solid #bfd08c;
   transition: all 0.375s ease-in-out;
 }
 
