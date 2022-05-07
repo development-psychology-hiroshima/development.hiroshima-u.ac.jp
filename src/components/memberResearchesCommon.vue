@@ -13,15 +13,20 @@ export default {
   props: {
     activities: Array,
   },
-  methods: {
-    getStructuredText: (object) => {
+  setup() {
+    const normalizeFilename = (filename) => `${filename.replace(/"/g, "_")}`;
+    const getStructuredText = (object) => {
       if (object.url) {
-        return `<a href="${object.url}">${object.title}</a>`;
+        return `<a href="${object.url}" target="_blank" download="${normalizeFilename(object.title)}">${object.title}</a>`;
       } else {
         return `<p>${object.title}</p>`;
       }
-    },
-  },
+    };
+
+    return {
+      getStructuredText,
+    };
+  }
 };
 </script>
 
