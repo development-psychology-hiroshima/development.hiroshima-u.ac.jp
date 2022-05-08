@@ -47,13 +47,14 @@ export default {
   left: 0;
   width: 100vw;
   padding-bottom: 1vh;
-  background: #f2f2f2d9;
-  backdrop-filter: blur(10px);
+  background: #f2f2f2f2;
 }
 
-@supports not (backdrop-filter: blur(10px)) {
+@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
   .container-menu-content {
-    background: #f2f2f2f2;
+    background: #f2f2f2d9;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 }
 

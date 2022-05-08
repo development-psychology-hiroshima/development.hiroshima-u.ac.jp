@@ -1,6 +1,6 @@
 <template>
   <div class="graduate-timeline" v-for="graduateYear in graduates">
-    <h4 class="title-graduate-year">{{ graduateYear.year }}年度</h4>
+    <h4>{{ graduateYear.year }}年度</h4>
     <div class="graduate-details" v-for="(value, key) in graduateYear">
       <div v-if="'year' !== key">{{ value }}</div>
     </div>
@@ -20,9 +20,6 @@ export default {
 </script>
 
 <style scoped>
-.title-graduate-year {
-  background: none;
-}
 
 .graduate-timeline {
   margin-bottom: 1rem;

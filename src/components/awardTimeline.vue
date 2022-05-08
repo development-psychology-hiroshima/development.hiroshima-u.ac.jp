@@ -115,13 +115,14 @@ export default {
   position: sticky;
   top: 0;
   width: 100%;
-  background: #f2f2f2d9;
-  backdrop-filter: blur(4px);
+  background: #f2f2f2;
 }
 
-@supports not (backdrop-filter: blur(4px)) {
+@supports (backdrop-filter: blur(4px)) or (-webkit-backdrop-filter: blur(4px)) {
   .title-award-year {
-    background: #f2f2f2;
+    background: #f2f2f2d9;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
   }
 }
 
