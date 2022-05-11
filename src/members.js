@@ -3,7 +3,7 @@ import bannerCarousel from "./components/bannerCarousel.vue";
 import mobileMenu from "./components/mobileMenu.vue";
 import desktopMenu from "./components/desktopMenu.vue";
 import memberShowboxWrapper from "./components/memberShowboxWrapper.vue";
-import { getConfig } from "./getConfig";
+import { getConfig } from "./getConfig.js";
 
 const config = await getConfig();
 

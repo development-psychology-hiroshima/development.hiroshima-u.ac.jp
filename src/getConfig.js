@@ -845,7 +845,7 @@ const defaultMembersResearch = {
   ],
 };
 
-const defaultTimeout = 5000;
+const defaultTimeout = 10000;
 
 const fetchTimeout = (url, ms, { signal, ...options } = {}) => {
   const controller = new AbortController();

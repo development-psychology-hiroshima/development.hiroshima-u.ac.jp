@@ -8,7 +8,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vitejs/plugin-legacy": "^1.8.2",
     "prettier": "^2.6.2",
+    "vite-plugin-top-level-await": "^0.0.4",
     "vue": "^3.2.33"
   },
   "devDependencies": {
