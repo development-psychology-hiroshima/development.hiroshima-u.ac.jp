@@ -98,9 +98,20 @@ li {
 a {
   color: #494949;
   text-decoration-line: none;
-  line-height: 0.45em;
-  border-bottom: .45em solid #bfd08c;
+  display: block;
   transition: all 0.375s ease-in-out;
+  width: 100vw;
+}
+
+a > span {
+  background: linear-gradient(
+    to top,
+    transparent 5%,
+    #bfd08c 5%,
+    #bfd08c 10%,
+    #bfd08c 40%,
+    transparent 0%
+  );
 }
 
 a:hover,
