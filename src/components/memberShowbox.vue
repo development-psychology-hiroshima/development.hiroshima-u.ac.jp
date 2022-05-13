@@ -11,6 +11,7 @@
       v-if="member.image"
       :src="member.image"
       :alt="member.name + ' 写真'"
+      onerror="this.style.display='none';console.error(`「${this.alt}」が見つかりません。`)"
     />
     <div class="member-description">
       <div class="container-description" v-if="member.intro">
