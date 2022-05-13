@@ -131,7 +131,7 @@ a > span {
 
 a:hover,
 a:focus {
-  color: #0099ff;
+  color: #2462f5;
   text-decoration-line: underline;
 }
 

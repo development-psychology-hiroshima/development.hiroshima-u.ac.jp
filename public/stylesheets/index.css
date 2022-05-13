@@ -34,7 +34,7 @@ li > a,
 .month-content > a,
 #umemura.image-caption {
   display: inline-block;
-  color: #0099ff;
+  color: #2462f5;
   text-decoration-line: underline;
 }
 
@@ -263,7 +263,7 @@ h3 {
 
 .email-hyperlink:hover,
 .email-hyperlink:focus {
-  color: #0099ff;
+  color: #2462f5;
 }
 
 .copyright {
@@ -398,7 +398,7 @@ img.lab-description {
 }
 
 .name {
-  font-weight: 700;
+  font-weight: bold;
 }
 
 .container-title {

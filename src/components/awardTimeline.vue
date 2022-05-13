@@ -134,7 +134,7 @@ export default {
 
 .award-info-link {
   display: inline-block;
-  color: #0099ff;
+  color: #2462f5;
   text-decoration-line: underline;
 }
 </style>

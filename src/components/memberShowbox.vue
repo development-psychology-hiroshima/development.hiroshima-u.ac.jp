@@ -119,7 +119,7 @@ p.title {
 
 p.title:after {
   content: "：";
-  font-weight: 400;
+  font-weight: normal;
 }
 
 p.text {
