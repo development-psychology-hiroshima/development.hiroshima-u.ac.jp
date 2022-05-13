@@ -20,7 +20,6 @@ export default {
 </script>
 
 <style scoped>
-
 .graduate-timeline {
   margin-bottom: 1rem;
 }

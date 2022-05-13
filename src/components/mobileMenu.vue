@@ -1,16 +1,31 @@
 <template>
-  <div id="container-menu-icon" @click="show = !show">
+  <div
+    role="menu"
+    tabindex="1"
+    id="container-menu-icon"
+    @click="show = !show"
+    @keyup.esc="show = false"
+    @keyup.space="show = !show"
+    @keyup.enter="show = !show"
+  >
     <span class="menu-line start" :class="show ? 'active' : ''"></span>
     <span class="menu-line middle" :class="show ? 'active' : ''"></span>
     <span class="menu-line end" :class="show ? 'active' : ''"></span>
   </div>
   <transition name="menu-animation">
-    <div id="focus-controller" v-if="show" @click="show = false">
+    <div
+      id="focus-controller"
+      role="button"
+      aria-roledescription="Sets mobile menu status shown or hidden"
+      v-if="show"
+      @click="show = false"
+      @keyup.esc="show = false"
+    >
       <div class="container-menu-content">
         <ul class="menu-content">
-          <li class="menu-item" v-for="menuItem in menuItems">
+          <li class="menu-item" v-for="menuItem in menuItems" role="menuitem">
             <a :href="menuItem.url" v-if="!(false === menuItem.show)">
-              {{ menuItem.name }}
+              <span>{{ menuItem.name }}</span>
             </a>
           </li>
         </ul>

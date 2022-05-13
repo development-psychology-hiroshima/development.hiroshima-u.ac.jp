@@ -6,7 +6,7 @@
       <ul class="award-text">
         <li>
           <span v-html="getContentStruct(award)"></span>
-<!--          <span v-if="award.url" v-html="getUrlStruct(award.url)"></span>-->
+          <!--          <span v-if="award.url" v-html="getUrlStruct(award.url)"></span>-->
         </li>
       </ul>
     </div>
@@ -27,7 +27,7 @@ export default {
       } else {
         return `${object.text}`;
       }
-    }
+    },
   },
   setup() {
     const rawTimeline = inject("config").awards;

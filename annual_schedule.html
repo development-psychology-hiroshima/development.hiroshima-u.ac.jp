@@ -44,27 +44,31 @@
     </noscript>
 
     <div id="container-banner">
-      <div id="banner-contents">
-        <div id="lab-title">広島大学 発達心理学研究室</div>
-        <div id="mobile-menu"></div>
+      <div id="banner-contents" role="banner">
+        <div id="lab-title" role="banner">広島大学 発達心理学研究室</div>
+        <div id="mobile-menu" role="menu"></div>
       </div>
     </div>
-    <div id="container-banner-carousel">
+    <div id="container-banner-carousel" role="widget">
       <div id="welcome">
         <p class="welcome-1">ようこそ</p>
         <p class="welcome-2">発達研へ</p>
       </div>
-      <div id="vue-carousel"></div>
+      <div id="vue-carousel" role="widget"></div>
     </div>
 
-    <div id="container-desktop-menu"></div>
+    <div id="container-desktop-menu" role="menubar"></div>
 
     <div class="container-index-contents">
       <div class="container-navigation"></div>
 
       <div class="container-main-content">
-        <div class="split-line">
-          <h2 id="top-target"><span>2022年度の発達心理学研究室の予定</span></h2>
+        <div class="split-line" role="heading">
+          <h2 id="top-target">
+            <span role="heading" aria-level="1"
+              >2022年度の発達心理学研究室の予定</span
+            >
+          </h2>
         </div>
 
         <div class="card">
@@ -74,21 +78,22 @@
               <p>新入生歓迎会、ゼミ（自己紹介、前期スケジュール確認）</p>
               <figure>
                 <img
-                class="introduction-image"
-                src="https://development.hiroshima-u.ac.jp/images/sche/201804shinkan.jpg"
-                alt="新入生歓迎会写真"
-              />
+                  class="introduction-image"
+                  src="https://development.hiroshima-u.ac.jp/images/sche/201804shinkan.jpg"
+                  alt="新入生歓迎会写真"
+                />
                 <figcaption>新入生歓迎会写真</figcaption>
               </figure>
             </div>
             <h4 class="month">５月</h4>
             <div class="month-content">
               <p>ゼミ、合同特別研究</p>
-              <figure><img
-                class="introduction-image"
-                src="https://development.hiroshima-u.ac.jp/images/sche/2022_zemi_fuukei.jpg"
-                alt="ゼミの様子"
-              />
+              <figure>
+                <img
+                  class="introduction-image"
+                  src="https://development.hiroshima-u.ac.jp/images/sche/2022_zemi_fuukei.jpg"
+                  alt="ゼミの様子"
+                />
                 <figcaption>ゼミの様子</figcaption>
               </figure>
             </div>
@@ -146,8 +151,12 @@
       <div id="container-misc-info">
         <div class="card" id="container-contact-info">
           <img class="logo" src="/images/logo.png" alt="発達研ロゴ" />
-          <h2 class="contact-title"><span>広島大学発達心理学研究室</span></h2>
-          <h2 class="contact-title"><span>お問い合わせ</span></h2>
+          <h2 class="contact-title">
+            <span role="heading" aria-level="2">広島大学発達心理学研究室</span>
+          </h2>
+          <h2 class="contact-title">
+            <span role="heading" aria-level="2">お問い合わせ</span>
+          </h2>
           <div class="container-personal-contact">
             <img
               class="contact-avatar"
@@ -179,7 +188,13 @@
       </div>
     </div>
 
-    <a id="top-button" href="#top-target" class="hidden">
+    <a
+      role="button"
+      aria-roledescription="Top button"
+      id="top-button"
+      href="#top-target"
+      class="hidden"
+    >
       <div id="top">↑</div>
     </a>
 

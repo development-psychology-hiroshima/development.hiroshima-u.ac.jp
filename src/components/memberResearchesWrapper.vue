@@ -4,24 +4,24 @@
     <member-researches-member :members="researchActivity.members" />
   </div>
 
-  <div class="split-line">
-    <h3><span>過去のメンバーの卒業論文</span></h3>
+  <div class="split-line" role="heading" aria-level="2">
+    <h3><span role="heading" aria-level="2">過去のメンバーの卒業論文</span></h3>
   </div>
 
   <div class="card">
     <member-researches-common :activities="researchActivity.bachelors" />
   </div>
 
-  <div class="split-line">
-    <h3><span>過去のメンバーの修士論文</span></h3>
+  <div class="split-line" role="heading" aria-level="2">
+    <h3><span role="heading" aria-level="2">過去のメンバーの修士論文</span></h3>
   </div>
 
   <div class="card">
     <member-researches-common :activities="researchActivity.masters" />
   </div>
 
-  <div class="split-line">
-    <h3><span>過去のメンバーの博士論文</span></h3>
+  <div class="split-line" role="heading" aria-level="2">
+    <h3><span role="heading" aria-level="2">過去のメンバーの博士論文</span></h3>
   </div>
 
   <div class="card">

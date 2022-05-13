@@ -44,33 +44,41 @@
     </noscript>
 
     <div id="container-banner">
-      <div id="banner-contents">
-        <div id="lab-title">広島大学 発達心理学研究室</div>
-        <div id="mobile-menu"></div>
+      <div id="banner-contents" role="banner">
+        <div id="lab-title" role="banner">広島大学 発達心理学研究室</div>
+        <div id="mobile-menu" role="menu"></div>
       </div>
     </div>
-    <div id="container-banner-carousel">
+    <div id="container-banner-carousel" role="widget">
       <div id="welcome">
         <p class="welcome-1">ようこそ</p>
         <p class="welcome-2">発達研へ</p>
       </div>
-      <div id="vue-carousel"></div>
+      <div id="vue-carousel" role="widget"></div>
     </div>
 
-    <div id="container-desktop-menu"></div>
+    <div id="container-desktop-menu" role="menubar"></div>
 
     <div class="container-index-contents">
       <div class="container-navigation"></div>
 
       <div class="container-main-content">
-        <div class="split-line">
-          <h2 id="top-target"><span>学生の研究活動</span></h2>
+        <div class="split-line" role="heading">
+          <h2 id="top-target">
+            <span role="heading" aria-level="1">学生の研究活動</span>
+          </h2>
         </div>
 
         <div id="members-research-activities">
           <div class="container-loading">
             <div class="loading-icon"></div>
-            <p class="loading-tip">ローディング時間がかなりかかる場合，<a href="https://www.google.co.jp/chrome/" target="_blank">Google Chrome</a>に切り替えてもう一度試してください。</p>
+            <p class="loading-tip">
+              ローディング時間がかなりかかる場合，<a
+                href="https://www.google.co.jp/chrome/"
+                target="_blank"
+                >Google Chrome</a
+              >に切り替えてもう一度試してください。
+            </p>
           </div>
         </div>
       </div>
@@ -78,8 +86,12 @@
       <div id="container-misc-info">
         <div class="card" id="container-contact-info">
           <img class="logo" src="/images/logo.png" alt="発達研ロゴ" />
-          <h2 class="contact-title"><span>広島大学発達心理学研究室</span></h2>
-          <h2 class="contact-title"><span>お問い合わせ</span></h2>
+          <h2 class="contact-title">
+            <span role="heading" aria-level="2">広島大学発達心理学研究室</span>
+          </h2>
+          <h2 class="contact-title">
+            <span role="heading" aria-level="2">お問い合わせ</span>
+          </h2>
           <div class="container-personal-contact">
             <img
               class="contact-avatar"
@@ -111,7 +123,13 @@
       </div>
     </div>
 
-    <a id="top-button" href="#top-target" class="hidden">
+    <a
+      role="button"
+      aria-roledescription="Top button"
+      id="top-button"
+      href="#top-target"
+      class="hidden"
+    >
       <div id="top">↑</div>
     </a>
 

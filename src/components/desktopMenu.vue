@@ -3,6 +3,7 @@
     v-for="menuItem in menuItems"
     :href="menuItem.url"
     :style="{ display: !(false === menuItem.show) ? 'flex' : 'none' }"
+    role="menuitem"
   >
     <div class="container-desktop-menu-item">
       <p class="desktop-menu-item title">{{ menuItem.name }}</p>

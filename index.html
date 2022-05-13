@@ -45,42 +45,54 @@
     </noscript>
 
     <div id="container-banner">
-      <div id="banner-contents">
-        <div id="lab-title">広島大学 発達心理学研究室</div>
-        <div id="mobile-menu"></div>
+      <div id="banner-contents" role="banner">
+        <div id="lab-title" role="banner">広島大学 発達心理学研究室</div>
+        <div id="mobile-menu" role="menu"></div>
       </div>
     </div>
-    <div id="container-banner-carousel">
+    <div id="container-banner-carousel" role="widget">
       <div id="welcome">
-        <p class="welcome-1">ようこそ</p>
-        <p class="welcome-2">発達研へ</p>
+        <p class="welcome-1" role="heading">ようこそ</p>
+        <p class="welcome-2" role="heading">発達研へ</p>
       </div>
-      <div id="vue-carousel"></div>
+      <div id="vue-carousel" role="widget"></div>
     </div>
 
-    <div id="container-desktop-menu"></div>
+    <div id="container-desktop-menu" role="menubar"></div>
 
     <div class="container-overall">
       <div class="container-index-contents">
         <div class="container-navigation"></div>
 
         <div class="container-main-content">
-          <div class="split-line">
-            <h2 id="top-target"><span>研究室の話題</span></h2>
+          <div class="split-line" role="heading">
+            <h2 id="top-target">
+              <span role="heading" aria-level="1">研究室の話題</span>
+            </h2>
           </div>
           <div id="container-awards">
             <div class="container-loading">
               <div class="loading-icon"></div>
-              <p class="loading-tip">ローディング時間がかなりかかる場合，<a href="https://www.google.co.jp/chrome/" target="_blank">Google Chrome</a>に切り替えてもう一度試してください。</p>
+              <p class="loading-tip">
+                ローディング時間がかなりかかる場合，<a
+                  href="https://www.google.co.jp/chrome/"
+                  target="_blank"
+                  >Google Chrome</a
+                >に切り替えてもう一度試してください。
+              </p>
             </div>
           </div>
 
-          <div class="split-line">
-            <h2><span>研究室の紹介</span></h2>
+          <div class="split-line" role="heading">
+            <h2><span role="heading" aria-level="1">研究室の紹介</span></h2>
           </div>
 
-          <div class="card">
-            <h3><span>人間のこころの発達を研究する</span></h3>
+          <div class="card" role="article">
+            <h3>
+              <span role="heading" aria-level="2"
+                >人間のこころの発達を研究する</span
+              >
+            </h3>
 
             <div class="main-content">
               <div class="container-align-center">
@@ -157,9 +169,12 @@
               <p class="sign-time">2018年6月5日</p>
             </div>
           </div>
-          <div class="card">
+
+          <div class="card" role="article">
             <h3>
-              <span>博士学位取得と就職のための手厚いサポートをします</span>
+              <span role="heading" aria-level="2"
+                >博士学位取得と就職のための手厚いサポートをします</span
+              >
             </h3>
 
             <div class="main-content">
@@ -208,8 +223,12 @@
             </div>
           </div>
 
-          <div class="card">
-            <h3><span>発達心理学研究室に興味のある方へ</span></h3>
+          <div class="card" role="article">
+            <h3>
+              <span role="heading" aria-level="2"
+                >発達心理学研究室に興味のある方へ</span
+              >
+            </h3>
             <div class="main-content">
               <p class="no-before">学内外より広くゼミ生募集中です！</p>
               <p class="no-before no-margin-after">
@@ -220,15 +239,15 @@
             </div>
           </div>
 
-          <div class="card">
-            <h3><span>卒業生の進路</span></h3>
+          <div class="card" role="article">
+            <h3><span role="heading" aria-level="2">卒業生の進路</span></h3>
             <div class="main-content">
               <p class="no-before">毎年全員進路が決まっています</p>
               <p class="no-before">
                 大学院進学のためのアドバイスをしっかりやります
               </p>
 
-              <div id="container-graduate"></div>
+              <div id="container-graduate" role="article"></div>
             </div>
           </div>
         </div>
@@ -236,8 +255,14 @@
         <div id="container-misc-info">
           <div class="card" id="container-contact-info">
             <img class="logo" src="/images/logo.png" alt="発達研ロゴ" />
-            <h2 class="contact-title"><span>広島大学発達心理学研究室</span></h2>
-            <h2 class="contact-title"><span>お問い合わせ</span></h2>
+            <h2 class="contact-title">
+              <span role="heading" aria-level="2"
+                >広島大学発達心理学研究室</span
+              >
+            </h2>
+            <h2 class="contact-title">
+              <span role="heading" aria-level="2">お問い合わせ</span>
+            </h2>
             <div class="container-personal-contact">
               <img
                 class="contact-avatar"
@@ -272,7 +297,13 @@
       </div>
     </div>
 
-    <a id="top-button" href="#top-target" class="hidden">
+    <a
+      role="button"
+      aria-roledescription="Top button"
+      id="top-button"
+      href="#top-target"
+      class="hidden"
+    >
       <div id="top">↑</div>
     </a>
 

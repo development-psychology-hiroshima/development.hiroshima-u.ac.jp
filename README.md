@@ -430,4 +430,6 @@ npm install -g vite@latest
 vite
 ```
 
+If you want to expose your development server to the local network, try `vite --host` instead.
+
 When you finish editing the source code, run `vite build` to build a production site at `/dist` path.

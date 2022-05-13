@@ -89,7 +89,8 @@ export default {
   overflow: hidden;
   display: grid;
   grid-template-areas: "carousel";
-  background: url("https://development.hiroshima-u.ac.jp/images/sche/201804shinkan.jpg") center;
+  background: url("https://development.hiroshima-u.ac.jp/images/sche/201804shinkan.jpg")
+    center;
   background-size: 110% auto;
 }
 

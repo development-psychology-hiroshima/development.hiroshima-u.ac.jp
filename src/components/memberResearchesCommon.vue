@@ -17,7 +17,11 @@ export default {
     const normalizeFilename = (filename) => `${filename.replace(/"/g, "_")}`;
     const getStructuredText = (object) => {
       if (object.url) {
-        return `<a href="${object.url}" target="_blank" download="${normalizeFilename(object.title)}">${object.title}</a>`;
+        return `<a href="${
+          object.url
+        }" target="_blank" download="${normalizeFilename(object.title)}">${
+          object.title
+        }</a>`;
       } else {
         return `<p>${object.title}</p>`;
       }
@@ -26,7 +30,7 @@ export default {
     return {
       getStructuredText,
     };
-  }
+  },
 };
 </script>
 
