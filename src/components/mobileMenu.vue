@@ -1,8 +1,9 @@
 <!--suppress CssUnusedSymbol -->
 <template>
   <div
-    role="menu"
-    tabindex="1"
+    role="menuitem"
+    tabindex="0"
+    aria-label="ナビメニューを開く・閉じる"
     id="container-menu-icon"
     @click="show = !show"
     @keyup.esc="show = false"
