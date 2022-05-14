@@ -1,8 +1,8 @@
 <template>
-  <div v-for="awardYear in timeline">
+  <div v-for="awardYear in timeline" :key="awardYear.year">
     <h2 class="title-award-year">{{ awardYear.year }}年</h2>
 
-    <div v-for="award in awardYear.awards">
+    <div v-for="award in awardYear.awards" :key="award.text">
       <ul class="award-text">
         <li>
           <span v-html="getContentStruct(award)"></span>

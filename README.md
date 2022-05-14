@@ -446,12 +446,12 @@ The corresponding HTML structures are:
     <div id="mobile-menu" role="menu"></div>
   </div>
 </div>
-<div id="container-banner-carousel" role="widget">
+<div id="container-banner-carousel" role="complementary">
   <div id="welcome">
     <p class="welcome-1" role="heading">ようこそ</p>
     <p class="welcome-2" role="heading">発達研へ</p>
   </div>
-  <div id="vue-carousel" role="widget"></div>
+  <div id="vue-carousel" role="complementary"></div>
 </div>
 
 <div id="container-desktop-menu" role="menubar"></div>

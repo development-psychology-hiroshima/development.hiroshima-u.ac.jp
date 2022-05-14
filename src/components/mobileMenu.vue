@@ -1,3 +1,4 @@
+<!--suppress CssUnusedSymbol -->
 <template>
   <div
     role="menu"
@@ -23,7 +24,12 @@
     >
       <div class="container-menu-content">
         <ul class="menu-content">
-          <li class="menu-item" v-for="menuItem in menuItems" role="menuitem">
+          <li
+            class="menu-item"
+            v-for="menuItem in menuItems"
+            :key="menuItem.name"
+            role="menuitem"
+          >
             <a :href="menuItem.url" v-if="!(false === menuItem.show)">
               <span>{{ menuItem.name }}</span>
             </a>

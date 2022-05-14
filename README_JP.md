@@ -429,9 +429,9 @@ menuItems:
     english: Annual schedule
     url: annual_schedule.html
     show: true
-
 ```
 
+</details>
 
 
 ## 新たなwebページを作成したい時…

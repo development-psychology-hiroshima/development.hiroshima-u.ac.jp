@@ -3,6 +3,7 @@
     v-for="menuItem in menuItems"
     :href="menuItem.url"
     :style="{ display: !(false === menuItem.show) ? 'flex' : 'none' }"
+    :key="menuItem.name"
     role="menuitem"
   >
     <div class="container-desktop-menu-item">

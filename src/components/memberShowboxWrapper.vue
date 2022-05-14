@@ -1,7 +1,11 @@
 <template>
-  <member-showbox v-for="member in members" :member="member" />
+  <member-showbox
+    v-for="member in members"
+    :member="member"
+    :key="member.name"
+  />
   <h2><span role="heading" aria-level="1">OB・OG</span></h2>
-  <member-showbox v-for="member in obog" :member="member" />
+  <member-showbox v-for="member in obog" :member="member" :key="member.name" />
 </template>
 
 <script>

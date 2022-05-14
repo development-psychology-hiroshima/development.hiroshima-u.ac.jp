@@ -37,6 +37,7 @@ export default {
   name: "memberPapers",
   inject: ["researches"],
   data() {
+    // noinspection JSUnresolvedVariable
     return {
       researchActivity: this.researches,
     };

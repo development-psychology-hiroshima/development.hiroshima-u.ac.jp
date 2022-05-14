@@ -1,7 +1,8 @@
+<!--suppress CssUnusedSymbol -->
 <template>
   <div class="container-carousel" @mouseover="stop()" @mouseout="start()">
     <div class="container-carousel-mask"></div>
-    <div class="carousel" v-for="image in showreel">
+    <div class="carousel" v-for="image in showreel" :key="image.id">
       <transition name="fade">
         <img
           class="banner-carousel-image"

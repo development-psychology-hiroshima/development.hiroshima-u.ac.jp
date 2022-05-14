@@ -6,6 +6,7 @@
     <h3 class="position" role="heading" aria-level="2">
       {{ member.position }}
     </h3>
+    <!--suppress HtmlDeprecatedAttribute -->
     <img
       class="member-image"
       v-if="member.image"
@@ -26,7 +27,11 @@
         <p class="title">主指導教員</p>
         <p class="text">{{ member.teacher }}</p>
       </div>
-      <div class="container-description" v-for="plusAlpha in member.others">
+      <div
+        class="container-description"
+        v-for="plusAlpha in member.others"
+        :key="plusAlpha.title"
+      >
         <p class="title">{{ plusAlpha.title }}</p>
         <p class="text" v-html="plusAlpha.content"></p>
       </div>
@@ -51,6 +56,7 @@ export default {
     "position position"
     "photo description";
   word-break: break-all;
+  grid-template-columns: min-content;
 }
 
 @media screen and (max-width: 425px) {
@@ -61,6 +67,7 @@ export default {
       "title"
       "position"
       "description";
+    grid-template-columns: 1fr;
   }
   .member-image {
     max-width: calc(100vw - 8rem) !important;

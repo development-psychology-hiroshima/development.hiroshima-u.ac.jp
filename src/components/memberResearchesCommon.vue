@@ -1,8 +1,10 @@
 <template>
   <ul>
+    <!--suppress JSCheckFunctionSignatures -->
     <li
       v-for="activity in activities"
       v-html="getStructuredText(activity)"
+      :key="activity.title"
     ></li>
   </ul>
 </template>

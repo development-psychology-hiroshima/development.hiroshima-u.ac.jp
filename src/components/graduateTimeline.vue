@@ -1,7 +1,15 @@
 <template>
-  <div class="graduate-timeline" v-for="graduateYear in graduates">
+  <div
+    class="graduate-timeline"
+    v-for="graduateYear in graduates"
+    :key="graduateYear.year"
+  >
     <h4>{{ graduateYear.year }}年度</h4>
-    <div class="graduate-details" v-for="(value, key) in graduateYear">
+    <div
+      class="graduate-details"
+      v-for="(value, key) in graduateYear"
+      :key="key"
+    >
       <div v-if="'year' !== key">{{ value }}</div>
     </div>
   </div>
