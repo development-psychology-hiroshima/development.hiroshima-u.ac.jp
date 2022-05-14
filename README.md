@@ -8,13 +8,26 @@ This manual is purposed to give proper instructions on maintaining webpage(s) ho
 
 Most of the page contents can be found at `main.yml` in the `/(public)/configs` directory. (Professors' research activity page, and annual schedule page are excluded)
 
-When editing the file, **DO USE ENGLISH HALF-WIDTH SPACE " " and keep indents consistent with other contexts.** Don't use Japanese full-width space "　". This will raise errors and all site contents will fallback to an initial state. All your modifications will not be shown.
+When editing the file, **DO USE ENGLISH HALF-WIDTH SPACE " " and keep indents consistent with other contexts.** Don't use Japanese full-width space "　". This will raise errors and all site contents will fall back to an initial state. All your modifications will not be shown.
 
 You can examine whether the configuration has been successfully loaded and interpreted in this way:
 
 1. Access [website homepage](https://development.hiroshima-u.ac.jp) **with a computer or tablet (not mobile)**;
 2. In menu items, check if the first english letter is `Capital letter` or not.
-3. If is capital letter, then te config file has been successfully loaded. Otherwise check the web console (`F12`) for errors.
+3. If is capital letter, then te config file has been successfully loaded.
+4. If the first letter is not capitalized, then check the web console (Chrome/Firefox: `F12`, Safari：`⌘` + `⌥` + `I`) for errors.
+
+<details>
+<summary>A working example would look like this:</summary>
+
+![image](/document/image/example-correct-yaml.jpg)
+</details>
+
+<details>
+<summary>A wrong example would look like this:</summary>
+
+![image](/document/image/example-wrong-yaml.jpg)
+</details>
 
 <details>
 <summary>This is a sample configuration file:</summary>
@@ -407,7 +420,7 @@ These components are mounted onto their specific `div` containers:
 - #vue-carousel
 
 You can find the example code in `/src/common.js`:
-  
+
 ```js
 import { createApp } from "vue";
 import bannerCarousel from "./components/bannerCarousel.vue";
