@@ -93,6 +93,8 @@ li {
 
 .menu-line {
   transition: all 0.375s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .menu-line:after {
