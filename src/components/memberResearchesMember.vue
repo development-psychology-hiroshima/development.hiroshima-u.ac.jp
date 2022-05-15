@@ -9,7 +9,7 @@
     </h4>
     <ul>
       <li class="papers-list" v-for="paper in member.papers" :key="paper.title">
-        <p>{{ paper.title }}</p>
+        <p class="paper-title">{{ paper.title }}</p>
         <p v-if="paper.url" v-html="getStructuredText(paper.url)"></p>
       </li>
     </ul>

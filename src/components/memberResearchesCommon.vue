@@ -25,7 +25,7 @@ export default {
           object.title
         }</a>`;
       } else {
-        return `<p>${object.title}</p>`;
+        return `<p class="paper-title">${object.title}</p>`;
       }
     };
 
