@@ -19,7 +19,7 @@
       id="focus-controller"
       role="button"
       aria-roledescription="Sets mobile menu status shown or hidden"
-      v-if="show"
+      v-show="show"
       @click="show = false"
       @keyup.esc="show = false"
     >
@@ -65,7 +65,7 @@ export default {
 
 .container-menu-content {
   position: fixed;
-  top: clamp(5vh, 5vh, 120px);
+  top: min(5vh, 120px);
   left: 0;
   width: 100vw;
   padding-bottom: 1vh;
@@ -141,7 +141,6 @@ a > span {
 a:hover,
 a:focus {
   color: #2462f5;
-  text-decoration-line: underline;
 }
 
 .menu-line.start.active {
@@ -158,17 +157,18 @@ a:focus {
 
 .menu-animation-enter-active,
 .menu-animation-leave-active {
-  transition: all 0.375s ease-in-out;
+  transition: all 0.375s ease;
+  transform-origin: top;
 }
 
 .menu-animation-enter-active,
 .menu-animation-leave-to {
   opacity: 0;
-  transform: translateY(-100px);
+  transform: translateY(-5%) scaleY(0.8);
 }
 
 .menu-animation-enter-to {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0%) scaleY(1);
 }
 </style>
