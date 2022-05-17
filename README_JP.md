@@ -438,4 +438,4 @@ menuItems:
 
 英語のReadmeの部分に参照してください。
 
-https://github.com/development-psychology-hiroshima/development.hiroshima-u.ac.jp#development-details
+https://github.com/development-psychology-hiroshima/development.hiroshima-u.ac.jp#continuing-development

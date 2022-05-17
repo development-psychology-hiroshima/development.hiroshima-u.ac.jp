@@ -4,6 +4,7 @@ import mobileMenu from "./components/mobileMenu.vue";
 import desktopMenu from "./components/desktopMenu.vue";
 import memberResearchesWrapper from "./components/memberResearchesWrapper.vue";
 import { getConfig, getMemberResearch } from "./getConfig";
+import projectWindow from "./components/projectWindow.vue";
 
 const config = await getConfig();
 const memberResearches = await getMemberResearch();
@@ -16,3 +17,6 @@ createApp(desktopMenu)
 createApp(memberResearchesWrapper)
   .provide("researches", memberResearches)
   .mount("#members-research-activities");
+createApp(projectWindow)
+  .provide("config", config)
+  .mount("#project-window");

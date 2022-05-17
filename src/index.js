@@ -4,6 +4,7 @@ import mobileMenu from "./components/mobileMenu.vue";
 import desktopMenu from "./components/desktopMenu.vue";
 import awardTimeline from "./components/awardTimeline.vue";
 import graduateTimeline from "./components/graduateTimeline.vue";
+import projectWindow from "./components/projectWindow.vue";
 import { getConfig } from "./getConfig";
 
 const config = await getConfig();
@@ -17,3 +18,6 @@ createApp(awardTimeline).provide("config", config).mount("#container-awards");
 createApp(graduateTimeline)
   .provide("config", config)
   .mount("#container-graduate");
+createApp(projectWindow)
+  .provide("config", config)
+  .mount("#project-window");

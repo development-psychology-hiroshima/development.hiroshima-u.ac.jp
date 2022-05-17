@@ -5,8 +5,8 @@
     <div v-for="award in awardYear.awards" :key="award.text">
       <ul class="award-text">
         <li>
-          <span v-html="getContentStruct(award)"></span>
-          <!--          <span v-if="award.url" v-html="getUrlStruct(award.url)"></span>-->
+          <span> {{ award.text }}</span>
+          <span v-if="award.url" v-html="getUrlStruct(award.url)"></span>
         </li>
       </ul>
     </div>
